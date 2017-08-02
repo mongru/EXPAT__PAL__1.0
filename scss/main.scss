@@ -1,3 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&subset=latin-ext');
+@import 'modules/fonts';
+@import 'modules/colors';
+@import 'modules/grid';
+@import 'modules/reset';
+@import 'partials/header';
+@import 'partials/main_info';
+@import 'partials/footer';
+
 body {
-    background-color: lightblue;
+    font-family: 'Roboto Mono', monospace;
+    background-color: $white;
+    // overflow: hidden;
 }
+
+
+
+
+// .col-4 {
+//     background-color: $dark-blue-primary;
+//     height: 200px;
+// }
+//
+// .x {
+//     background-color: $violet-primary;
+// }
+//
+// .y {
+//     background-color: $turquoise-secondary-main;
+// }

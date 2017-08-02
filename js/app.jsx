@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import '../scss/main.scss';
+import {Template} from './components/template.jsx';
 
 class App extends React.Component {
   render(){
-    return (<h1>Compiled!</h1>);
+    return (<Template/>);
   }
 }
 

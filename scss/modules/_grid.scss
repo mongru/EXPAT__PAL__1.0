@@ -1,0 +1,37 @@
+.container {
+    width: 100vw;
+    max-width: 1800px;
+    margin: 0 auto;
+
+    // grid 12 kolumn --> 1 kolumna = 8.33%
+    .row {
+        // margin: 10px 0;
+        // max-width: 1800px;
+        padding: 0 8rem;
+
+        &::after,
+        &::before {
+            content: " ";
+            clear: both;
+            display: block;
+        }
+
+        [class*="col-"] {
+            // wszystkie klasy zaczynające się od col-
+            float: left;
+            min-height: 1px;
+            padding: 0 20px;
+        }
+
+        @for $i from 1 through 12 {
+            .col-#{$i} {
+                width: 100%;
+                margin: 0 0 20px;
+
+                @media screen and(min-width: 640px) {
+                    width: (100%/12) * $i;
+                }
+            }
+        }
+    }
+}

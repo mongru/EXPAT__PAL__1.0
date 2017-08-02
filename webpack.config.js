@@ -23,7 +23,7 @@ module.exports = {
       use: [ 'style-loader', 'css-loader', "postcss-loader" ]
     },
       {
-         test: /\.(woff|woff2)$/,
+         test: /\.(woff|woff2|eot|svg|ttf|otf)$/,
          loader: 'file-loader?name=fonts/[name].[ext]'
      },
     {
