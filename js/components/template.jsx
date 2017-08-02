@@ -12,7 +12,7 @@ import {Footer} from './footer.jsx';
 export class Template extends React.Component {
   render(){
     return (
-        <div className="container">
+        <div className="container__wrapper">
             <Header />
             <MainInfo />
             <MainDescription />

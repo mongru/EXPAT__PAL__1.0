@@ -7,8 +7,8 @@ export class MainInfo extends React.Component {
         <main>
             <section className="main">
                 <div className="container main__info">
-
                     <div className="row">
+
                         <div className="col-12 main__info--banner">
                             <h1>
                                 Pay it forward <br/>
@@ -18,12 +18,16 @@ export class MainInfo extends React.Component {
                                 Meet like-minded people in your new area <br/>
                                 willing to share their knowledge, struggles and experience
                             </p>
+
                         </div>
+
                     </div>
+                    <div className="main__info--stripe"></div>
+                    <div className="main__info--circle"></div>
                 </div>
+
             </section>
         </main>
-
     );
   }
 }

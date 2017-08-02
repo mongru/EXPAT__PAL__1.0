@@ -5,6 +5,7 @@
 @import 'modules/reset';
 @import 'partials/header';
 @import 'partials/main_info';
+@import 'partials/main_description';
 @import 'partials/footer';
 
 body {
@@ -13,18 +14,8 @@ body {
     // overflow: hidden;
 }
 
-
-
-
-// .col-4 {
-//     background-color: $dark-blue-primary;
-//     height: 200px;
-// }
-//
-// .x {
-//     background-color: $violet-primary;
-// }
-//
-// .y {
-//     background-color: $turquoise-secondary-main;
-// }
+.container__wrapper {
+    width: 100%;
+    margin: 0 auto;
+    background-color: $neutral-grey;
+}

@@ -1,0 +1,87 @@
+.main__description {
+    position: relative;
+    top: 150px;
+    left: 50px;
+    height: 800px;
+
+    .main__description--title {
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+    .main__description--heading {
+        font-family: 'itc_charter_blackitalic', serif;
+        font-size: 36px;
+        color: $black;
+        margin-top: 100px;
+        line-height: 1.2em;
+    }
+
+    .main__description--text {
+        font-size: 24px;
+        line-height: 1.2em;
+        padding: 1.2em 2em 0 2em;
+
+    }
+
+    .main__description--username, .main__description--password {
+        border: 1px solid $turquoise-secondary-light;
+        border-radius: 6px;
+        background-color: $white;
+        display: block;
+        width: 400px;
+        height: 35px;
+        margin: 2em 2em 2em 5em;
+        padding: 1em;
+    }
+
+    .main__description--button {
+        border: 2px solid $turquoise-secondary-main;
+        border-radius: 6px;
+        background-color: $medium-blue-primary;
+        width: 100px;
+        height: 35px;
+        color: $white;
+        font-family: 'Roboto Mono', monospace;
+        font-size: 16px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin-left: 200px;
+        margin-top: 20px;
+
+    }
+
+    .main__description--image {
+        .main__description--device {
+            width: 500px;
+            position: relative;
+            top: 15em;
+            right: 10em;
+        }
+
+        .main__description--screen1, .main__description--screen2 {
+            width: 230px;
+            position: relative;
+            top: -18em;
+            right: 1.5em;
+        }
+
+        .main__description--screen1 {
+            z-index: 1;
+        }
+
+        .main__description--screen2 {
+            right: 8em;
+            // transform: rotate(15deg);
+
+        }
+    }
+}
+
+
+
+// h2 {
+//     font-family: 'itc_charter_blackitalic', serif;
+//     font-size: 50px;
+//     color: $black;
+// }
