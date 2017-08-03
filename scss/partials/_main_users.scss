@@ -1,0 +1,43 @@
+.main__users--container {
+    // position: relative;
+    padding-top: 20px;
+    height: 600px;
+
+    .main__users--row {
+
+        .main__users--profilebox {
+            padding: 5em 3em 3em 3em;
+            height: 500px;
+
+            .main__users--avatar {
+                width: 180px;
+                height: 180px;
+                background-color: $neutral-grey;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+
+            .main__users--info {
+                text-align: center;
+                padding: 3em;
+
+                .main__users--name {
+                    padding-bottom: 1.5em;
+                }
+            }
+
+        }
+
+        .violet {
+            background-color: $violet-primary;
+        }
+
+        .turquoise {
+            background-color: $turquoise-secondary-light;
+        }
+
+        .blue {
+            background-color: $dark-blue-primary;
+        }
+    }
+}

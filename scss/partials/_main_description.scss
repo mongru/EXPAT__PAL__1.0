@@ -1,55 +1,98 @@
-.main__description {
+.main__description--container {
     position: relative;
     top: 150px;
-    left: 50px;
-    height: 800px;
+    height: 900px;
+    background-color: $white;
 
     .main__description--title {
         font-size: 20px;
         text-transform: uppercase;
+        padding: 3em 0  0 3em;
     }
 
     .main__description--heading {
         font-family: 'itc_charter_blackitalic', serif;
         font-size: 36px;
         color: $black;
-        margin-top: 100px;
+        // margin-top: 100px;
         line-height: 1.2em;
+        padding: 1.8em 0.2em 1em 2em;
     }
 
     .main__description--text {
         font-size: 24px;
         line-height: 1.2em;
-        padding: 1.2em 2em 0 2em;
-
+        padding: 0.2em 2em 0 4em;
     }
 
-    .main__description--username, .main__description--password {
-        border: 1px solid $turquoise-secondary-light;
-        border-radius: 6px;
-        background-color: $white;
-        display: block;
-        width: 400px;
-        height: 35px;
-        margin: 2em 2em 2em 5em;
-        padding: 1em;
+    .main__description--form {
+        padding: 0.2em 2em 0 4em;
+        margin: 4em 2em;
+
+        .main__description--username, .main__description--password {
+            border: 1px solid $turquoise-secondary-light;
+            border-radius: 6px;
+            background-color: $neutral-grey;
+            display: block;
+            width: 440px;
+            height: 35px;
+            margin-top: 2em;
+            padding: 1em;
+        }
+
+        .main__description--username::-webkit-input-placeholder,
+        .main__description--password::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+          color: $dark-blue-primary;
+          text-transform: uppercase;
+          font-family: 'Roboto Mono', monospace;
+          font-size: 14px;
+          letter-spacing: 1px;
+          line-height: 1.2em;
+        }
+
+        .main__description--username::-moz-placeholder,
+        .main__description--password::-moz-placeholder { /* Firefox 19+ */
+          color: $dark-blue-primary;
+          text-transform: uppercase;
+          font-family: 'Roboto Mono', monospace;
+          font-size: 14px;
+          letter-spacing: 1px;
+        }
+
+        .main__description--username:-ms-input-placeholder,
+        .main__description--password:-ms-input-placeholder { /* IE 10+ */
+          color: $dark-blue-primary;
+          text-transform: uppercase;
+          font-family: 'Roboto Mono', monospace;
+          font-size: 14px;
+          letter-spacing: 1px;
+        }
+
+        .main__description--username:-moz-placeholder ,
+        .main__description--password:-moz-placeholder  { /* Firefox 18- */
+          color: $dark-blue-primary;
+          text-transform: uppercase;
+          font-family: 'Roboto Mono', monospace;
+          font-size: 14px;
+          letter-spacing: 1px;
+        }
+
+        .main__description--button {
+            border: 2px solid $turquoise-secondary-main;
+            border-radius: 6px;
+            background-color: $medium-blue-primary;
+            width: 120px;
+            height: 40px;
+            color: $white;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 16px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-top: 2em;
+        }
     }
 
-    .main__description--button {
-        border: 2px solid $turquoise-secondary-main;
-        border-radius: 6px;
-        background-color: $medium-blue-primary;
-        width: 100px;
-        height: 35px;
-        color: $white;
-        font-family: 'Roboto Mono', monospace;
-        font-size: 16px;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        margin-left: 200px;
-        margin-top: 20px;
 
-    }
 
     .main__description--image {
         .main__description--device {
@@ -76,12 +119,20 @@
 
         }
     }
+
+    .main__description--radiobuttons {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        top: -180px;
+
+        .main__description--radiobutton {
+            // stylowanie radio buttonów do poprawy
+            input[type=radio] {
+              border: 1px solid $dark-blue-primary;
+              background-color: $white;
+            }
+        }
+    }
 }
-
-
-
-// h2 {
-//     font-family: 'itc_charter_blackitalic', serif;
-//     font-size: 50px;
-//     color: $black;
-// }

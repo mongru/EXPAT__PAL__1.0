@@ -19,7 +19,6 @@ export class Template extends React.Component {
             <MainSearchForm />
             <MainUsers />
             <ContactForm />
-            <h2>Template!</h2>
             <Footer />
         </div>
     )
