@@ -6,7 +6,6 @@
     background-position: center center;
     background-repeat: no-repeat;
     display: flex;
-    // align-items: center;
     justify-content: center;
 
 
@@ -43,6 +42,11 @@
     height: 260px;
     position: absolute;
     top: 580px;
+
+    &:hover {
+        transform: scale(10);
+        transition-duration: 2s;
+    }
     // z-index: 1;
 }
 

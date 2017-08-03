@@ -11,6 +11,7 @@ export class MainDescription extends React.Component {
                         <p className="main__description--title">
                             How it works
                         </p>
+                        <div className="title__circle"></div>
                         <h2 className="main__description--heading">
                             We are a platform for sharing the hands-on knowledge of real people.
                         </h2>

@@ -1,0 +1,19 @@
+@include keyframe(fadeout) {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@include keyframe(changecolour) {
+    0% {
+        color: #000;
+    }
+
+    100% {
+        color: #FFF;
+    }
+}

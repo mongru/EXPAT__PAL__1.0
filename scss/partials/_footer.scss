@@ -1,0 +1,39 @@
+.footer__container {
+    height: 100px;
+    background: $white;
+
+    .footer__container--social {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        a {
+
+            &:visited {
+                color: $medium-blue-primary;
+            }
+
+            &:hover {
+                color: $dark-blue-primary;
+            }
+
+            &:active {
+                color: $turquoise-secondary-main;
+            }
+
+        }
+    }
+
+    .footer__container--logo {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+
+        img {
+            width: 100px;
+            margin-top: -18px;
+            margin-right: 60px;
+
+        }
+    }
+}

@@ -1,7 +1,7 @@
 .main__users--container {
     // position: relative;
     padding-top: 20px;
-    height: 600px;
+    height: 500px;
 
     .main__users--row {
 
@@ -30,14 +30,31 @@
 
         .violet {
             background-color: $violet-primary;
+
+            &:hover {
+                background-color: lighten($violet-primary, 1);
+
+            }
         }
 
         .turquoise {
-            background-color: $turquoise-secondary-light;
+            background-color: $turquoise-secondary-dark;
+            color: $dark-blue-primary;
+
+            &:hover {
+                background-color: lighten($turquoise-secondary-dark, 1);
+
+            }
         }
 
         .blue {
             background-color: $dark-blue-primary;
+            color: $white;
+
+            &:hover {
+                background-color: lighten($dark-blue-primary, 1);
+
+            }
         }
     }
 }

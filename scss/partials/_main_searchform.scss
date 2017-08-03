@@ -20,7 +20,6 @@
             margin: 3em 0 2em 0;
         }
 
-
         .main__searchform--input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
           color: $dark-blue-primary;
           font-family: 'Roboto Mono', monospace;
@@ -57,7 +56,7 @@
       #map {
         display: block;
         height: 600px;
-        width: 50%;
+        width: 84vw;
         // border: 2px solid $black;
         margin: 0 auto;
 

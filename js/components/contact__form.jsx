@@ -9,14 +9,17 @@ export class ContactForm extends React.Component {
             <div className="container contact__container">
                 <div className="row">
                     <div className="col-8">
+
                         <div className="contact__container--title">
                             Questions? Go for it!
                         </div>
+                        <div className="title__circle"></div>
+
                         <form className="contact__container--form">
                             <fieldset>
                                 <input className="contact__form--input" type="text" name="name" placeholder="Your name"/>
                                 <input className="contact__form--input" type="email" name="email" placeholder="Your email"/>
-                                <textarea className="contact__form--message" placeholder="Your message"></textarea>
+                                <textarea className="contact__form--message" placeholder="Your message" rows="" cols=""></textarea>
                                 <button className="contact__form--submitBtn">Send</button>
                             </fieldset>
                         </form>
