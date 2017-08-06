@@ -2,9 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 export class MainDescription extends React.Component {
+
+
   render(){
     return (
-        <section className="main__description">
+        <section id="main__description" className="main__description">
             <div className="container main__description--container">
                 <div className="row">
                     <div className="col-7">

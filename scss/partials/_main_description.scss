@@ -1,8 +1,9 @@
 .main__description--container {
     position: relative;
-    top: 150px;
+    top: 100px;
     height: 900px;
     background-color: $white;
+    overflow: hidden;
 
     .main__description--title {
         font-size: 20px;
@@ -153,6 +154,7 @@
         justify-content: flex-start;
         align-items: flex-start;
         top: -180px;
+        z-index: 999;
 
         .main__description--radiobutton {
             // stylowanie radio buttonów do poprawy
@@ -164,4 +166,46 @@
 
         }
     }
+}
+
+.main__description--device:hover {
+    -webkit-animation: shake 0.1s ease-in-out 0.1s infinite alternate;
+}
+
+.main__description--screen1:hover,
+.main__description--screen2:hover {
+    -webkit-animation: pulse 0.5s ease-in infinite;
+}
+
+
+
+@-webkit-keyframes shake {
+ from {
+    -webkit-transform: rotate(10deg);
+ }
+ to {
+   -webkit-transform-origin:center center;
+   -webkit-transform: rotate(-10deg);
+ }
+
+}
+
+#pulse:hover{
+  animation: pulse 0.5s ease-in infinite;
+}
+#push:hover{
+  animation: pulse 0.3s linear 1;
+}
+#pop:hover{
+  animation: pop 0.3s linear 1;
+}
+@keyframes pulse{
+  25%  {transform: scale(0.9);}
+  75%  {transform: scale(1.1);}
+}
+@keyframes push{
+  50%  {transform: scale(0.8);}
+}
+@keyframes pop{
+  50%  {transform: scale(1.2);}
 }

@@ -9,7 +9,7 @@ export class MainSearchForm extends React.Component {
   render() {
 
     return (
-        <section className="main__searchform">
+        <section id="main__searchform" className="main__searchform">
             <div className="container main__searchform--container">
                 <div className="row">
                     <div className="col-12">

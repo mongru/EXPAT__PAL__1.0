@@ -4,7 +4,7 @@
     height: 100px;
     background-color: $dark-blue-primary;
     position: fixed;
-    z-index: 9999;
+    z-index: 99999;
 
     .menu__logo img {
         width: 200px;
@@ -23,7 +23,42 @@
 
 
         .nav__links--link {
+            color: $white;
+            text-decoration: none;
 
+            // &::before {
+            //     content: "";
+            //     width: 100px;
+            //     height: 2px;
+            //     background-color: $turquoise-secondary-main;
+            //     z-index: 99999;
+            //     display: block;
+            //     margin-top: 20px;
+            //
+            // }
+
+            &::after {
+                content: "";
+                width: 100px;
+                height: 2px;
+                background-color: $turquoise-secondary-main;
+                z-index: 99999;
+                display: block;
+                margin-top: -38px;
+
+            }
+
+            &:visited {
+                color: $turquoise-secondary-light;
+            }
+            &:hover {
+                color: $turquoise-secondary-main;
+            }
+            &:active {
+                color: $white;
+
+
+            }
         }
     }
 

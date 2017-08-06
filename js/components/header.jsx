@@ -10,15 +10,23 @@ export class Header extends React.Component {
                     <div className="row">
                         <div className="col-5">
                             <div className="menu__logo">
-                                <img src="./assets/logo__negative.png" alt="logo expatpal" />
+                                <a href="#">
+                                    <img src="./assets/logo__negative.png" alt="logo expatpal" />
+                                </a>
                             </div>
                         </div>
                         <nav>
                             <div className="col-7">
                                 <ul className="nav__links">
-                                    <li className="nav__links--link">How it works</li>
-                                    <li className="nav__links--link">Log in</li>
-                                    <li className="nav__links--link">Sign up</li>
+                                    <a className="nav__links--link" href="#main__searchform">
+                                        <li className="nav__links--link">How it works</li>
+                                    </a>
+                                    <a className="nav__links--link" href="#main__description">
+                                        <li className="nav__links--link">Log in</li>
+                                    </a>
+                                    <a className="nav__links--link" href="#">
+                                        <li className="nav__links--link">Sign up</li>
+                                    </a>
                                 </ul>
                             </div>
                         </nav>
