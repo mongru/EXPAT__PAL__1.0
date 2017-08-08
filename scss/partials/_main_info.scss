@@ -8,15 +8,12 @@
     display: flex;
     justify-content: center;
 
-
-
     .main__info--banner {
-
         position: relative;
         z-index: 999;
 
         h1 {
-            font-family: 'charteritc_bd_btbold_italic', serif;
+            font-family: $heading-font;
             font-size: 120px;
             color: $white;
             margin-top: 26rem;
@@ -34,7 +31,6 @@
     }
 }
 
-
 .main__info--stripe {
     background-color: $medium-blue-transparent;
     width: 83.5%;
@@ -44,13 +40,11 @@
     top: 580px;
     left: 0;
     right: 0;
-    margin: 0 auto;
 
-
-    &:hover {
-        transform: scale(10);
-        transition-duration: 2s;
-    }
+    // &:hover {
+    //     transform: scale(10);
+    //     transition-duration: 2s;
+    // }
 
     // .grow {
     //     transform: scale(10);
@@ -78,7 +72,7 @@
     transform: scale(1.2);
     transition-delay: 0.2s;
     transition-duration: 0.5s;
-    font-family: 'charteritc_bd_btbold_italic', serif;
+    font-family: $heading-secondary-font;
     font-size: 120px;
     color: $medium-blue-transparent;
     margin-top: 26rem;
@@ -94,7 +88,6 @@
     top: 580px;
     left: 0;
     right: 0;
-    margin: 0 auto;
     transform: scale(10);
     transition-duration: 2s;
 }
@@ -108,20 +101,17 @@
     top: 580px;
     left: 0;
     right: 0;
-    margin: 0 auto;
     transform: scale(1);
     transition-duration: 1s;
 }
 
 .text-afterScroll {
-    // background-color: $turquoise-secondary-light;
     transform: rotate(-45deg);
     transform: scale(0.8);
     // transition-delay: 0.5s;
     transition-duration: 0.5s;
     font-family: 'charteritc_bd_btbold_italic', serif;
     font-size: 100px;
-    color: $turquoise-secondary-light;
     margin-top: 26rem;
     line-height: 1em;
 }
