@@ -84,7 +84,7 @@
         .main__description--password:-moz-placeholder  { /* Firefox 18- */
           color: $dark-blue-primary;
           text-transform: uppercase;
-          font-family: 'Roboto Mono', monospace;
+          font-family: $main-font;
           font-size: 14px;
           letter-spacing: 1px;
         }
@@ -96,7 +96,7 @@
             width: 120px;
             height: 40px;
             color: $white;
-            font-family: 'Roboto Mono', monospace;
+            font-family: $main-font;
             font-size: 16px;
             letter-spacing: 0.2em;
             text-transform: uppercase;
@@ -141,6 +141,7 @@
         }
 
         .main__description--screen2 {
+            // position: absolute;
             right: 8em;
             // transform: rotate(15deg);
             // transition: 0.2s ease-in-out 4s;
