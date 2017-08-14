@@ -1,3 +1,4 @@
+// Header Component
 
 .menu {
     width: 100%;
@@ -6,9 +7,10 @@
     position: fixed;
     z-index: 99999;
 
-    .menu__logo img {
+    &__logo img {
         width: 200px;
         padding: 1.6em 0 0 1.6em;
+        display: inline-block;
     }
 
     .nav__links {
@@ -20,46 +22,119 @@
         font-size: 16px;
         letter-spacing: 0.1em;
         line-height: 110px;
+        @include respond-to($tablet-portrait) {
+            display: none;
+        }
+        @include respond-to($mobile) {
+            display: none;
+        }
 
-
-        .nav__links--link {
+        &--link {
             color: $white;
             text-decoration: none;
 
-            // &::before {
-            //     content: "";
-            //     width: 100px;
-            //     height: 2px;
-            //     background-color: $turquoise-secondary-main;
-            //     z-index: 99999;
-            //     display: block;
-            //     margin-top: 20px;
-            //
-            // }
-
             &::after {
                 content: "";
-                width: 100px;
+                width: 0;
                 height: 2px;
                 background-color: $turquoise-secondary-main;
                 z-index: 99999;
                 display: block;
                 margin-top: -38px;
-
+                transition: width .3s;
             }
 
             &:visited {
                 color: $turquoise-secondary-light;
             }
-            &:hover {
+
+            &:hover{
                 color: $turquoise-secondary-main;
+
+                &::after {
+                    width: 100%;
+                }
             }
             &:active {
                 color: $white;
 
-
+                &::after {
+                    width: 100%;
+                }
             }
         }
     }
+}
 
+.hamburger {
+    width: 50px;
+    height: 25px;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    top: 45%;
+    right: 8%;
+
+
+    &__stripe {
+        background-color: $turquoise-secondary-main;
+        height: 2px;
+        width: 50px;
+        display: block;
+        position: relative;
+        top: 8px;
+        transition: 1s;
+
+        &:after, &:before {
+            content: '';
+            background-color: $turquoise-secondary-main;
+            height: 2px;
+            width: 50px;
+            display: block;
+            position: absolute;
+            transition: all 500ms ease-in-out;
+        }
+        &:after {
+            top: 10px;
+        }
+        &:before {
+            top: -10px;
+        }
+    }
+    @include respond-to($desktop) {
+        display: none;
+    }
+    @include respond-to($large-desktop) {
+        display: none;
+    }
+
+    &:hover {
+        .hamburger__stripe {
+            background-color: transparent;
+
+            &:after {
+                transform: rotate(45deg);
+                top: -3px;
+            }
+            &:before {
+                transform: rotate(-45deg);
+                top: -3px;
+            }
+        }
+    }
+}
+
+.active {
+    .hamburger__stripe {
+        background-color: transparent;
+
+        &:after {
+            transform: rotate(45deg);
+            top: -6px;
+        }
+        &:before {
+            transform: rotate(-45deg);
+            top: -6px;
+        }
+    }
 }

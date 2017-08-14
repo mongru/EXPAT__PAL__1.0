@@ -28,6 +28,9 @@ export class Header extends React.Component {
                                         <li className="nav__links--link">Sign up</li>
                                     </a>
                                 </ul>
+                                <span className="hamburger">
+                                    <span className="hamburger__stripe"></span>
+                                </span>
                             </div>
                         </nav>
                     </div>

@@ -1,3 +1,5 @@
+@import 'media_queries';
+
 .container__wrapper {
     width: 100%;
     margin: 0 auto;
@@ -9,7 +11,7 @@
     max-width: 1200px;
     margin: 0 auto;
 
-    // grid 12 kolumn --> 1 column = 8.33%
+    // 12 column grid --> 1 column = 8.33%
     .row {
         &::after,
         &::before {
@@ -29,7 +31,7 @@
             .col-#{$i} {
                 width: 100%;
 
-                @media screen and(min-width: 640px) {
+                @media screen and #{$desktop} {
                     width: (100%/12) * $i;
                 }
             }
