@@ -104,8 +104,6 @@
         }
     }
 
-
-
     .main__description--image {
         transform: rotate3d(-1, 1, 1, 20deg);
         -webkit-transform: rotate3d(-1, 1, 1, 20deg);
@@ -149,23 +147,22 @@
         }
     }
 
-    .main__description--radiobuttons {
+    .main__description--dots {
         position: relative;
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
-        top: -180px;
-        z-index: 999;
+        top: -200px;
+        z-index: 999999;
+        width: 300px;
+    }
 
-        .main__description--radiobutton {
-            // stylowanie radio buttonów do poprawy
-            // input[type=radio] {
-            //   border: 1px solid $dark-blue-primary;
-            //   background-color: $white;
-            // }
-
-
-        }
+    .main__description--dot {
+        width: 10px;
+        height: 10px;
+        background-color: $dark-blue-primary;
+        margin: 10px;
+        border-radius: 50%;
     }
 }
 

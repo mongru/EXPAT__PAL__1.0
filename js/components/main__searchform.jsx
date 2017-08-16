@@ -24,9 +24,6 @@ export class MainSearchForm extends React.Component {
                 </div>
             </div>
 
-
-
-
             <div id="map"></div>
             <div id="infowindow-content">
               <img src="" width="16" height="16" id="place-icon"/>

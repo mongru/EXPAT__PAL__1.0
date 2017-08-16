@@ -44,7 +44,7 @@ export class MainInfo extends React.Component {
     }
 
     render(){
-        
+
         return (
             <main>
                 <section className="main">
@@ -59,14 +59,12 @@ export class MainInfo extends React.Component {
                                     Meet like-minded people in your new area <br/>
                                     willing to share their knowledge, struggles and experience
                                 </p>
-
                             </div>
 
                         </div>
                         <div ref={(ref) => this.scrollStripe = ref} className="main__info--stripe"></div>
                         <div className="main__info--circle"></div>
                     </div>
-
                 </section>
             </main>
         );
