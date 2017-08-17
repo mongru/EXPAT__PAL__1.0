@@ -1,14 +1,22 @@
 document.addEventListener("DOMContentLoaded", function(){
 
-    console.log("oko");
-    function initMap() {
+    console.log("Google Maps ready :)");
+
+    function initMap(lat, lng) {
+        var warsaw = {lat: lat, lng: lng};
         var map = new google.maps.Map(document.getElementById('map'), {
             center: {
-                lat: -33.8688,
-                lng: 151.2195
+                lat: lat,
+                lng: lng
             },
-            zoom: 13
+            zoom: 10
         });
+
+        var marker = new google.maps.Marker({
+          position: warsaw,
+          map: map
+        });
+
         var card = document.getElementById('pac-card');
         var input = document.getElementById('pac-input');
         var types = document.getElementById('type-selector');
@@ -19,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function(){
         var autocomplete = new google.maps.places.Autocomplete(input);
 
         console.log(autocomplete);
-    
+
 
         // Bind the map's bounds (viewport) property to the autocomplete object,
         // so that the autocomplete requests use the current map bounds for the
@@ -44,6 +52,11 @@ document.addEventListener("DOMContentLoaded", function(){
                 window.alert("No details available for input: '" + place.name + "'");
                 return;
             }
+
+            console.log(autocomplete.gm_accessors_.place.Gc.formattedPrediction);
+
+
+
 
             // If the place has a geometry, then present it on a map.
             if (place.geometry.viewport) {
@@ -70,6 +83,36 @@ document.addEventListener("DOMContentLoaded", function(){
             infowindow.open(map, marker);
         });
     }
-        initMap();
+
+    // Geolocation of device
+    var options = {
+    enableHighAccuracy: true,
+    timeout: 6000,
+    maximumAge: 0
+    };
+
+    function success(position) {
+        var crd = position.coords;
+
+        console.log(position);
+        console.log('Your current position is:');
+        console.log(`Latitude : ${crd.latitude}`);
+        console.log(`Longitude: ${crd.longitude}`);
+        var latitude = crd.latitude;
+        var longitude = crd.longitude;
+
+        initMap(latitude, longitude);
+        // console.log(`More or less ${crd.accuracy} meters.`);
+    };
+
+    function error(err) {
+        initMap(52.250237, 21.012180);
+        console.warn(`ERROR(${err.code}): ${err.message}`);
+    };
+
+    navigator.geolocation.getCurrentPosition(success, error, options);
+
+// Init Google Map
+    // initMap();
 
 })

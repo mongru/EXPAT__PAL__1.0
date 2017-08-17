@@ -3,17 +3,19 @@ import ReactDOM from 'react-dom';
 //import {Map} from './map';
 
 export class MainSearchForm extends React.Component {
-    componentDidMount(){
-        //Map.initMap();
+
+    handleSubmit(e) {
+        e.preventDefault()
     }
-  render() {
+
+    render() {
 
     return (
         <section id="main__searchform" className="main__searchform">
             <div className="container main__searchform--container">
                 <div className="row">
                     <div className="col-12">
-                        <form className="main__searchform--form">
+                        <form className="main__searchform--form" onSubmit={(e) => this.handleSubmit(e)}>
                             <fieldset>
                                 <legend className="main__searchform--title">Find people in your area</legend>
                                 <input id="pac-input" type="text"
@@ -33,5 +35,5 @@ export class MainSearchForm extends React.Component {
 
         </section>
     );
-  }
+    }
 }

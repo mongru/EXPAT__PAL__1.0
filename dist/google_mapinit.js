@@ -1,11 +1,11 @@
 function initMap() {
-  var uluru = {lat: -25.363, lng: 131.044};
+  var warsaw = {lat: 52.229045, lng: 21.003254};
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 4,
-    center: uluru
+    center: warsaw
   });
   var marker = new google.maps.Marker({
-    position: uluru,
+    position: warsaw,
     map: map
   });
 }
