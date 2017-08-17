@@ -20,6 +20,7 @@
 
     .nav__links {
         display: none;
+        color: $white;
 
         @include respond-to($desktop) {
             display: flex;
@@ -49,7 +50,7 @@
             }
 
             &:visited {
-                color: $turquoise-secondary-light;
+                color: $white;
             }
 
             &:hover{
@@ -129,16 +130,36 @@
 }
 
 .active {
+    position: absolute;
+    cursor: pointer;
+    top: 11%;
+    left: 66%;
+
     .hamburger__stripe {
         background-color: transparent;
 
         &:after {
             transform: rotate(45deg);
-            top: -6px;
+            top: -3px;
         }
         &:before {
             transform: rotate(-45deg);
-            top: -6px;
+            top: -3px;
+        }
+    }
+    &:hover {
+        .hamburger__stripe {
+            background-color: transparent;
+            height: 4px;
+
+            &:after {
+                background-color: $white;
+                transform: scale(1.2);
+            }
+            &:before {
+                background-color: $white;
+                transform: scale(1.2);
+            }
         }
     }
 }
@@ -147,7 +168,7 @@
     display: none;
     width: 300px;
     height: 400px;
-    background-color: $medium-blue-transparent;
+    background-color: $dark-blue-primary;
     position: absolute;
     top: 0;
     right: 0;
@@ -155,7 +176,7 @@
     &__menu {
         position: relative;
         top: 30%;
-        left: 40%;
+        left: 20%;
         margin: 0 auto;
 
         &--item {
@@ -165,10 +186,36 @@
         &--link {
             text-decoration: none;
             color: white;
+
+            &::after {
+                content: "";
+                width: 0;
+                height: 2px;
+                background-color: $turquoise-secondary-main;
+                z-index: 99999;
+                display: block;
+                margin-top: 8px;
+                transition: width .3s;
+            }
+
+            &:visited {
+                color: $white;
+            }
+
+            &:hover{
+                color: $turquoise-secondary-main;
+
+                &::after {
+                    width: 100%;
+                }
+            }
+            &:active {
+                color: $white;
+
+                &::after {
+                    width: 100%;
+                }
+            }
         }
     }
-}
-
-.showMenu {
-    display: block;
 }

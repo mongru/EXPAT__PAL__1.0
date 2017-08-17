@@ -143,6 +143,11 @@
             right: 8em;
             // transform: rotate(15deg);
             // transition: 0.2s ease-in-out 4s;
+            // @include respond-to($desktop) {
+            //     width: 180px;
+            //     padding: 10px 0 0 20px;
+            //     display: inline-block;
+            // }
 
         }
     }

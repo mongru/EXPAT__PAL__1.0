@@ -1,22 +1,55 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-export class Header extends React.Component {
-
-    constructor(props) {
-        super(props);
-        this.showNav = this.showNav.bind(this); // WIP
+class NavMobile extends React.Component {
+    constructor (props) {
+        super (props);
         this.state = {
-            isOpen: false
-        };
+            displayBurger: "block",
+            displayUl: "none"
+        }
     }
 
-    showNav(e) {
-        e.preventDefault()
+    handleClick = () => {
         this.setState ({
-            isOpen: true
+            displayBurger: this.state.displayBurger=="block"?"none":"block",
+            displayUl: this.state.displayUl=="none"?"block":"none"
         });
     }
+
+    render(){
+        const styleObjBurger={
+            display: this.state.displayBurger
+        }
+        const styleObjUl={
+            display: this.state.displayUl
+        }
+        return (<div>
+                    <span className="hamburger" onClick={this.handleClick}>
+                        <span className="hamburger__stripe"></span>
+                    </span>
+                    <nav style={styleObjUl} className="nav__mobile">
+                        <ul className="nav__mobile__menu">
+                            <li className="nav__mobile__menu--item">
+                                <a href="#main__searchform" className="nav__mobile__menu--link">How it works</a>
+                            </li>
+                            <li className="nav__mobile__menu--item">
+                                <a href="#main__description" className="nav__mobile__menu--link">Log in</a>
+                            </li>
+                            <li className="nav__mobile__menu--item">
+                                <a href="#" className="nav__mobile__menu--link">Sign up</a>
+                            </li>
+                        </ul>
+                        <div className="active" onClick={this.handleClick}>
+                            <span className="hamburger__stripe"></span>
+                        </div>
+                    </nav>
+                </div>
+            )
+            }
+        }
+
+export class Header extends React.Component {
 
     render(){
 
@@ -32,39 +65,26 @@ export class Header extends React.Component {
                                     </a>
                                 </div>
                             </div>
-
                             <nav>
                                 <div className="col-7">
                                     <ul className="nav__links">
-                                        <a className="nav__links--link" href="#main__searchform">
-                                            <li className="nav__links--link">How it works</li>
-                                        </a>
-                                        <a className="nav__links--link" href="#main__description">
-                                            <li className="nav__links--link">Log in</li>
-                                        </a>
-                                        <a className="nav__links--link" href="#">
-                                            <li className="nav__links--link">Sign up</li>
-                                        </a>
+                                        <li className="nav__links--link">
+                                            <a className="nav__links--link" href="#main__searchform">
+                                                How it works
+                                            </a>
+                                        </li>
+                                        <li className="nav__links--link">
+                                            <a className="nav__links--link" href="#main__description">
+                                                Log in
+                                            </a>
+                                        </li>
+                                        <li className="nav__links--link">
+                                            <a className="nav__links--link" href="#">
+                                                Sign up
+                                            </a>
+                                        </li>
                                     </ul>
-                                    <span className="hamburger" isOpen={this.state.isOpen} onClick={this.showNav} >
-                                        <span className="hamburger__stripe"></span>
-                                    </span>
-                                    <nav className="nav__mobile">
-                                        <ul className="nav__mobile__menu">
-                                            <li className="nav__mobile__menu--item">
-                                                <a href="#" className="nav__mobile__menu--link">Test</a>
-                                            </li>
-                                            <li className="nav__mobile__menu--item">
-                                                <a href="#" className="nav__mobile__menu--link">Test</a>
-                                            </li>
-                                            <li className="nav__mobile__menu--item">
-                                                <a href="#" className="nav__mobile__menu--link">Test</a>
-                                            </li>
-                                            <li className="nav__mobile__menu--item">
-                                                <a href="#main__description" className="nav__mobile__menu--link">Test</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
+                                    <NavMobile />
                                 </div>
                             </nav>
                         </div>
