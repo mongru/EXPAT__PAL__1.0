@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 export class MainDescription extends React.Component {
 
-    handleLoginUser(e) {
+    handleLogin(e) {
         e.preventDefault()
     }
 
@@ -25,10 +25,10 @@ export class MainDescription extends React.Component {
                                 Connect online, grab a cuppa offline, and break the cycle of fear and isolation.
                             </article>
 
-                            <form onSubmit={(e) => this.handleLoginUser(e)} className="main__description--form">
+                            <form onSubmit={(e) => this.handleLogin(e)} className="main__description--form">
                                 <input className="main__description--username" type="text" name="username" placeholder="username"></input>
                                 <input className="main__description--password" type="password" name="password" placeholder="password"></input>
-                                <button onClick={(e) => this.handleLoginUser(e)} className="main__description--button">Login</button>
+                                <button onClick={(e) => this.handleLogin(e)} className="main__description--button">Login</button>
                             </form>
 
                         </div>
