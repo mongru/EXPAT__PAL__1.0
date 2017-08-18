@@ -117,8 +117,17 @@
             position: relative;
             top: 15em;
             right: 10em;
+            visibility: hidden;
 
+            @include respond-to($desktop) {
+            visibility: visible;
+                &:hover {
+                    -webkit-animation: shake 0.1s ease-in-out 0.1s infinite alternate;
+                }
+            }
         }
+
+
 
         .main__description--screen1, .main__description--screen2 {
             width: 230px;
@@ -130,25 +139,26 @@
 
         .main__description--screen1 {
             z-index: 1;
-            // -webkit-box-shadow: 10px 10px 5px 0px $medium-blue-transparent;
-            // -moz-box-shadow: 10px 10px 5px 0px $medium-blue-transparent;
-            // box-shadow: 8px 10px 5px 0px $medium-blue-transparent;
-            // animation-name: fade-in($turquoise-secondary-main, 0.5);
-            // animation-duration: 2s;
-            // animation-timing-function: ease-in;
+            visibility: hidden;
+
+            @include respond-to($desktop) {
+            visibility: visible;
+                &:hover {
+                    -webkit-animation: pulse 0.5s ease-in infinite;
+                }
+            }
         }
 
         .main__description--screen2 {
-            // position: absolute;
+            visibility: hidden;
             right: 8em;
-            // transform: rotate(15deg);
-            // transition: 0.2s ease-in-out 4s;
-            // @include respond-to($desktop) {
-            //     width: 180px;
-            //     padding: 10px 0 0 20px;
-            //     display: inline-block;
-            // }
 
+            @include respond-to($large-desktop) {
+            visibility: visible;
+                &:hover {
+                    -webkit-animation: pulse 0.5s ease-in infinite;
+                }
+            }
         }
     }
 
@@ -171,16 +181,6 @@
     }
 }
 
-.main__description--device:hover {
-    -webkit-animation: shake 0.1s ease-in-out 0.1s infinite alternate;
-}
-
-.main__description--screen1:hover,
-.main__description--screen2:hover {
-    -webkit-animation: pulse 0.5s ease-in infinite;
-}
-
-
 
 @-webkit-keyframes shake {
  from {
@@ -190,18 +190,8 @@
    -webkit-transform-origin:center center;
    -webkit-transform: rotate(-10deg);
  }
-
 }
 
-#pulse:hover{
-  animation: pulse 0.5s ease-in infinite;
-}
-#push:hover{
-  animation: pulse 0.3s linear 1;
-}
-#pop:hover{
-  animation: pop 0.3s linear 1;
-}
 @keyframes pulse{
   25%  {transform: scale(0.9);}
   75%  {transform: scale(1.1);}
