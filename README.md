@@ -1,6 +1,6 @@
 # EXPAT__PAL__1.0
 
-A landing page for an EXPAT__PAL__1.0 app - **currently in build**.
+Landing page for an EXPAT__PAL__1.0 app - **currently in build**.
 
 ## Motivation
 
@@ -39,7 +39,7 @@ npm start
 * [Random User Generator API](https://randomuser.me/) - for creating placeholder user profiles
 * [Geolocation](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/geolocation)
 
-#TO DO's:
+# TO DO's:
 * Improve RWD
 * Improve code splitting
 * Add form actions & events
