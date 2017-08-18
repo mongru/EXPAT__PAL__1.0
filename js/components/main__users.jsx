@@ -58,7 +58,7 @@ export class MainUser extends React.Component {
 export class MainUsers extends React.Component {
 
     render(){
-
+        
         return (
             <section className="main__users">
                 <div className="container main__users--container">

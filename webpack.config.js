@@ -38,10 +38,10 @@ module.exports = {
    ]
  },
  plugins: [
-   require('autoprefixer'),
-   new webpack.SourceMapDevToolPlugin({
-  filename: 'bundle.js.map',
-  exclude: ['/node_modules/','vendor.js']
+    require('autoprefixer'),
+    new webpack.SourceMapDevToolPlugin({
+    filename: 'bundle.js.map',
+    exclude: ['/node_modules/','vendor.js']
 })
  ]
 };
