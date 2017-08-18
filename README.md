@@ -1,11 +1,10 @@
 # EXPAT__PAL__1.0
 
-Landing page for an EXPAT__PAL__1.0 app - **currently in build**.
+Landing page for the EXPAT__PAL__1.0 app - **currently in build**.
 
 ## Motivation
 
-EXPAT__PAL__1.0 is an app for people, who recently moved to a foreign country and look for friendship/help.
-The aim is to create a supportive community inspired by a pay it forward philosophy of life.
+EXPAT__PAL__1.0 is an app for people who recently moved to a foreign country and look for friendship/help. The aim is to create a supportive community inspired by the "pay it forward" philosophy of life.
 
 ### Installing
 
@@ -27,7 +26,7 @@ npm start
 
 ## Built With
 
-* ReactJS framework
+* ReactJS
 * JavaScript (ES5, ES6)
 * jQuery (for simple animations)
 * SCSS for styling
@@ -39,7 +38,7 @@ npm start
 * [Random User Generator API](https://randomuser.me/) - for creating placeholder user profiles
 * [Geolocation](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/geolocation)
 
-# TO DO's:
+# TODO's:
 * Improve RWD
 * Improve code splitting
 * Add form actions & events
@@ -55,7 +54,7 @@ npm start
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
 ## Demo
 [Click here](https://mongru.github.io/EXPAT__PAL__1.0/)
