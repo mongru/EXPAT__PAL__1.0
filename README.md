@@ -39,7 +39,7 @@ npm start
 * [Geolocation](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/geolocation)
 
 # TODO's:
-* Improve RWD
+* Improve RWD :heavy_check_mark: :tada:
 * Improve code splitting
 * Add form actions & events
 * [Firebase](https://rometools.github.io/rome/) - realtime database
