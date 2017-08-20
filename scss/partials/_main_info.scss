@@ -76,11 +76,11 @@
     right: 0;
     @include respond-to($tablet-portrait) {
         height: 260px;
-        top: 64%;
+        top: 30%;
     }
     @include respond-to($desktop) {
         height: 260px;
-        top: 64%;
+        top: 30%;
         // transform: scaleX(1.2) scaleY(15);
         // transition-duration: 2s;
     }
@@ -162,7 +162,7 @@
     background-color: $medium-blue-transparent;
     width: 83.5%;
     margin: 0 auto;
-    height: 130px;
+    height: 260px;
     position: absolute;
     top: 30%;
     left: 0;
@@ -172,14 +172,14 @@
 
     @include respond-to($tablet-portrait) {
         height: 260px;
-        top: 580px;
+        top: 30%;
         transform: scaleX(1.2) scaleY(12);
         // transition-duration: 2s;
     }
 
     @include respond-to($desktop) {
         height: 260px;
-        top: 580px;
+        top: 30%;
         transform: scaleX(1.2) scaleY(13);
         // transition-duration: 2s;
     }
@@ -194,7 +194,7 @@
     background-color: $medium-blue-transparent;
     width: 83.5%;
     margin: 0 auto;
-    height: 130px;
+    height: 260px;
     position: absolute;
     top: 30%;
     left: 0;
@@ -204,14 +204,14 @@
 
     @include respond-to($tablet-portrait) {
         height: 260px;
-        top: 64%;
+        top: 30%;
         transform: scaleX(1) scaleY(1);
         transition-duration: 1s;
     }
 
     @include respond-to($desktop) {
         height: 260px;
-        top: 64%;
+        top: 30%;
         transform: scaleX(1) scaleY(1);
         transition-duration: 1s;
     }
