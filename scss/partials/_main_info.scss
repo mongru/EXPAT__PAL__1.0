@@ -1,12 +1,18 @@
 .main__info {
     width: 100vw;
-    height: 840px;
+    height: 700px;
     background-image: url("../assets/Background__photo__tint.jpg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
+    @include respond-to($tablet-portrait) {
+        height: 840px;
+    }
+    @include respond-to($desktop) {
+        height: 780px;
+    }
 
     &--banner {
         position: relative;
@@ -14,13 +20,20 @@
 
         h1 {
             font-family: $heading-font;
-            font-size: 68px;
-            color: $white;
+            font-size: 58px;
             margin-top: 12rem;
-            line-height: 1em;
+            margin-left: 2rem;
+            line-height: 1.2em;
+            color: $white;
+
+            @include respond-to($tablet-portrait) {
+                font-size: 68px;
+                margin-top: 16rem;
+            }
             @include respond-to($desktop) {
-                font-size: 100px;
+                font-size: 90px;
                 margin-top: 24rem;
+                margin-left: 10rem;
             }
             @include respond-to($large-desktop) {
                 font-size: 120px;
@@ -30,11 +43,24 @@
 
         p {
             color: $white;
-            font-size: 20px;
-            padding-top: 1.2em;
-            padding-left: 6em;
+            font-size: 16px;
+            padding-top: 1.6em;
+            padding-left: 2em;
+            padding-right: 1em;
             font-weight: 400;
-            line-height: 1.4em;
+            line-height: 1.8em;
+            @include respond-to($tablet-portrait) {
+                padding-top: 2em;
+                padding-left: 2em;
+                padding-right: 2em;
+            }
+            @include respond-to($desktop) {
+                font-size: 20px;
+                padding-top: 1.2em;
+                padding-left: 6em;
+                font-weight: 400;
+                line-height: 1.4em;
+            }
         }
     }
 }
@@ -45,31 +71,44 @@
     margin: 0 auto;
     height: 260px;
     position: absolute;
-    top: 580px;
+    top: 30%;
     left: 0;
     right: 0;
+    @include respond-to($tablet-portrait) {
+        height: 260px;
+        top: 64%;
+    }
+    @include respond-to($desktop) {
+        height: 260px;
+        top: 64%;
+        // transform: scaleX(1.2) scaleY(15);
+        // transition-duration: 2s;
+    }
 }
 
 .main__info--circle {
-    width: 400px;
-    height: 400px;
+    width: 320px;
+    height: 320px;
     border-radius: 50%;
     border: 1px solid $medium-blue-primary;
     position: absolute;
-    top: 50px;
+    top: 150px;
     left: 0;
     right: 0;
     margin: 0 auto;
     z-index: 9999;
     @include respond-to($tablet-portrait) {
+        top: 50px;
         width: 500px;
         height: 500px;
     }
     @include respond-to($desktop) {
-        width: 800px;
-        height: 800px;
+        top: 50px;
+        width: 768px;
+        height: 768px;
     }
     @include respond-to($large-desktop) {
+        top: 50px;
         width: 1000px;
         height: 1000px;
     }
@@ -80,24 +119,43 @@
     transition-delay: 0.2s;
     transition-duration: 0.5s;
     font-family: $heading-font;
-    font-size: 120px;
-    color: $medium-blue-transparent;
-    margin-top: 20rem;
-    line-height: 1em;
+    font-size: 58px;
+    margin-top: 12rem;
+    margin-left: 2rem;
+    line-height: 1.2em;
+    color: $white;
+    @include respond-to($tablet-portrait) {
+        transform: scale(1.2);
+        transition-delay: 0.2s;
+        transition-duration: 0.5s;
+        font-family: $heading-font;
+        font-size: 120px;
+        color: $medium-blue-transparent;
+        margin-top: 20rem;
+        line-height: 1em;
+    }
     @include respond-to($desktop) {
         font-size: 120px;
         margin-top: 26rem;
-        line-height: 1em;
     }
 }
 
 .text-afterScroll {
-    transform: scale(0.8);
+    transform: scale(0.9);
     transition-duration: 0.5s;
-    font-family: $heading-font, serif;
-    font-size: 100px;
-    margin-top: 20rem;
-    line-height: 1em;
+    font-family: $heading-font;
+    font-size: 58px;
+    margin-top: 12rem;
+    margin-left: 2rem;
+    line-height: 1.2em;
+    @include respond-to($desktop) {
+        transform: scale(1);
+        transition-duration: 0.5s;
+        font-family: $heading-font;
+        font-size: 100px;
+        margin-top: 20rem;
+        line-height: 1em;
+    }
 }
 
 .stripe-beforeScroll {
@@ -106,14 +164,29 @@
     margin: 0 auto;
     height: 130px;
     position: absolute;
-    top: 240px;
+    top: 30%;
     left: 0;
     right: 0;
-    transform: scale(10);
-    transition-duration: 2s;
+    transform: scaleX(1.2) scaleY(15);
+    transition-duration: 1s;
+
+    @include respond-to($tablet-portrait) {
+        height: 260px;
+        top: 580px;
+        transform: scaleX(1.2) scaleY(12);
+        // transition-duration: 2s;
+    }
+
     @include respond-to($desktop) {
         height: 260px;
         top: 580px;
+        transform: scaleX(1.2) scaleY(13);
+        // transition-duration: 2s;
+    }
+
+    @include respond-to($large-desktop) {
+        transform: scaleX(1.2) scaleY(24);
+        transition-duration: 2s;
     }
 }
 
@@ -123,13 +196,23 @@
     margin: 0 auto;
     height: 130px;
     position: absolute;
-    top: 240px;
+    top: 30%;
     left: 0;
     right: 0;
-    transform: scale(1);
+    transform: scaleX(1) scaleY(1);
     transition-duration: 1s;
+
+    @include respond-to($tablet-portrait) {
+        height: 260px;
+        top: 64%;
+        transform: scaleX(1) scaleY(1);
+        transition-duration: 1s;
+    }
+
     @include respond-to($desktop) {
         height: 260px;
-        top: 580px;
+        top: 64%;
+        transform: scaleX(1) scaleY(1);
+        transition-duration: 1s;
     }
 }

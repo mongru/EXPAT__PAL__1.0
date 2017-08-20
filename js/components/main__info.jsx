@@ -22,6 +22,7 @@ export class MainInfo extends React.Component {
     }
 
     handleScrollStripe = (event) => {
+
         // console.log(event);
         if (this.scrollStripe !== null) {
             if (($(document).scrollTop() + $(window).height() / 2) > ($('body').height() / 2)) {
@@ -56,8 +57,7 @@ export class MainInfo extends React.Component {
                                     expat community
                                 </h1>
                                 <p>
-                                    Meet like-minded people in your new area <br/>
-                                    willing to share their knowledge, struggles and experience
+                                    Meet like-minded people in your new area willing to share their knowledge, struggles and experience
                                 </p>
                             </div>
 

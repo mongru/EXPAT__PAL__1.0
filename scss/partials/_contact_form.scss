@@ -1,11 +1,30 @@
 .contact__container {
-    height: 1000px;
+
+    position: relative;
+    // height: 1000px;
     background-color: $white;
 
-    .contact__container--title {
+    &--title {
         font-size: 20px;
         text-transform: uppercase;
-        padding: 5em 0  0 3em;
+        padding: 3em 0  0 2em;
+        @include respond-to($desktop) {
+            margin-left: 60px;
+        }
+    }
+
+    &--form {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        @include respond-to($tablet-portrait) {
+
+        }
+        @include respond-to($desktop) {
+            justify-content: flex-end;
+            padding: 0 0 0 3em;
+        }
+
     }
 
     .title__circle {
@@ -15,21 +34,18 @@
         border: 1px solid $dark-blue-primary;
         position: relative;
         top: -50px;
-        left: 40px;
+        left: 20px;
+        @include respond-to($desktop) {
+            margin-left: 60px;
+        }
     }
 
-    .contact__container--form {
-        padding: 0 0 0 3em;
-        display: flex;
-        justify-content: flex-end;
-
-    }
 
     .contact__form--input,
     .contact__form--message,
     .contact__form--submitBtn {
         display: block;
-        width: 500px;
+        width: 320px;
         height: 50px;
         margin: 3em 0;
         background-color: $neutral-grey;
@@ -37,17 +53,35 @@
 
         &::-webkit-input-placeholder {
             color: $black;
-            font-family: 'Roboto Mono', monospace;
+            font-family: $main-font;
             font-size: 16px;
             padding-left: 1em;
+        }
+
+        @include respond-to($tablet-portrait) {
+            width: 480px;
+        }
+
+        @include respond-to($desktop) {
+            display: block;
+            width: 500px;
+            height: 50px;
+            margin: 3em 0;
+            background-color: $neutral-grey;
+            border-style: none;
+
+            &::-webkit-input-placeholder {
+                color: $black;
+                font-family: 'Roboto Mono', monospace;
+                font-size: 16px;
+                padding-left: 1em;
+            }
         }
     }
 
     .contact__form--message {
         height: 200px;
         resize: none;
-
-
     }
 
     .contact__form--submitBtn {

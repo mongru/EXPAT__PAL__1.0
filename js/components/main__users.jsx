@@ -10,6 +10,8 @@ fetch("https://randomuser.me/api/")
 
   }));
 
+
+
 export class MainUser extends React.Component {
     constructor(props){
         super(props);
@@ -43,12 +45,11 @@ export class MainUser extends React.Component {
     render() {
         return (
             <div>
-                <figure className="main__users--avatar">
-                    <img className="main__users--avatar" src={this.state.avatar} alt="profile picture" />
+                <figure className="main__users--avatar" style={{backgroundImage: `url(${this.state.avatar})`}}>
                 </figure>
                 <div className="main__users--info">
-                    <p className="main__users--name">Name: {this.state.name} {this.state.lastName}</p>
-                    <p className="main__users--location">Location: {this.state.street} {this.state.city}</p>
+                    <p className="main__users--name">Name: <span className="main__users--bold">{this.state.name} {this.state.lastName}</span></p>
+                    <p className="main__users--location">Location: {this.state.street} <span className="main__users--bold">{this.state.city}</span></p>
                 </div>
             </div>
         );
@@ -58,7 +59,7 @@ export class MainUser extends React.Component {
 export class MainUsers extends React.Component {
 
     render(){
-        
+
         return (
             <section className="main__users">
                 <div className="container main__users--container">

@@ -7,14 +7,20 @@
     z-index: 99999;
     padding: 20px 0;
 
+    @include respond-to($desktop) {
+
+    }
+
     &__logo img {
         width: 150px;
         display: inline-block;
+        padding-left: 2em;
 
         @include respond-to($desktop) {
             width: 180px;
             padding: 10px 0 0 20px;
             display: inline-block;
+            margin-left: 60px;
         }
     }
 
@@ -32,6 +38,7 @@
             letter-spacing: 0.1em;
             line-height: 80px;
             margin-bottom: 20px;
+            margin-right: 60px;
         }
 
         &--link {
@@ -78,7 +85,7 @@
     outline: none;
     position: absolute;
     top: 45%;
-    right: 8%;
+    right: 12%;
 
 
     &__stripe {
@@ -133,7 +140,7 @@
     position: absolute;
     cursor: pointer;
     top: 11%;
-    left: 66%;
+    right: 12%;
 
     .hamburger__stripe {
         background-color: transparent;
@@ -166,9 +173,9 @@
 
 .nav__mobile {
     display: none;
-    width: 300px;
+    width: 100%;
     height: 400px;
-    background-color: $dark-blue-primary;
+    background-color: $medium-blue-primary;
     position: absolute;
     top: 0;
     right: 0;
@@ -176,11 +183,13 @@
     &__menu {
         position: relative;
         top: 30%;
-        left: 20%;
+        // left: 30%;
         margin: 0 auto;
 
         &--item {
             padding: 20px;
+            text-align: center;
+
         }
 
         &--link {
