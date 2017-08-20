@@ -81,8 +81,9 @@
     @include respond-to($desktop) {
         height: 260px;
         top: 30%;
-        // transform: scaleX(1.2) scaleY(15);
-        // transition-duration: 2s;
+    }
+    @include respond-to($large-desktop) {
+        top: 64%;
     }
 }
 
@@ -185,8 +186,9 @@
     }
 
     @include respond-to($large-desktop) {
-        transform: scaleX(1.2) scaleY(24);
-        transition-duration: 2s;
+        top: 64%;
+        transform: scaleX(1.2) scaleY(25);
+        transition-duration: 1s;
     }
 }
 
@@ -212,6 +214,12 @@
     @include respond-to($desktop) {
         height: 260px;
         top: 30%;
+        transform: scaleX(1) scaleY(1);
+        transition-duration: 1s;
+    }
+
+    @include respond-to($large-desktop) {
+        top: 64%;
         transform: scaleX(1) scaleY(1);
         transition-duration: 1s;
     }
