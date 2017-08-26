@@ -50,12 +50,31 @@
         margin: 3em 0;
         background-color: $neutral-grey;
         border-style: none;
+        color: $black;
+        font-family: $main-font;
+        padding-left: 20px;;
+        font-size: 16px;
+        line-height: 20px;
 
         &::-webkit-input-placeholder {
             color: $black;
             font-family: $main-font;
             font-size: 16px;
-            padding-left: 1em;
+            line-height: 20px;
+        }
+
+        &::-moz-placeholder {
+            color: $black;
+            font-family: $main-font;
+            font-size: 16px;
+            line-height: 20px;
+        }
+
+        &::-ms-input-placeholder {
+            color: $black;
+            font-family: $main-font;
+            font-size: 16px;
+            line-height: 20px;
         }
 
         @include respond-to($tablet-portrait) {

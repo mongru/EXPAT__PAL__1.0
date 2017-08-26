@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-fetch("https://randomuser.me/api/")
-  .then(res => res.json()
-  .then(res => {
-
-      console.log(res);
-      console.log(res.results[0].name.first, res.results[0].name.last, res.results[0].location.city, res.results[0].location.street, res.results[0].picture.large);
-
-  }));
+// fetch("https://randomuser.me/api/")
+//   .then(res => res.json()
+//   .then(res => {
+//
+//       console.log(res);
+//       console.log(res.results[0].name.first, res.results[0].name.last, res.results[0].location.city, res.results[0].location.street, res.results[0].picture.large);
+//
+//   }));
 
 
 

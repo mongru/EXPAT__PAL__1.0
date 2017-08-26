@@ -47,6 +47,7 @@ export class MainInfo extends React.Component {
     render(){
 
         return (
+            
             <main>
                 <section className="main">
                     <div className="container main__info">

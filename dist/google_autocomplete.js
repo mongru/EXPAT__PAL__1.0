@@ -49,13 +49,11 @@ document.addEventListener("DOMContentLoaded", function(){
             if (!place.geometry) {
                 // User entered the name of a Place that was not suggested and
                 // pressed the Enter key, or the Place Details request failed.
-                window.alert("No details available for input: '" + place.name + "'");
+                window.alert("Sorry we couldn't find:'" + place.name + "' Please try again");
                 return;
             }
 
             console.log(autocomplete.gm_accessors_.place.Gc.formattedPrediction);
-
-
 
 
             // If the place has a geometry, then present it on a map.

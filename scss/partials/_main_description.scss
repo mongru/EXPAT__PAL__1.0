@@ -92,9 +92,13 @@
             background-color: $neutral-grey;
             display: block;
             width: calc(100% - 4em);
-            // height: 35px;
             margin: 2em;
             padding: 1em;
+            color: $dark-blue-primary;
+            font-family: $main-font;
+            font-size: 14px;
+            letter-spacing: 1px;
+            line-height: 1.2em;
             @include respond-to($tablet-portrait) {
                 width: 80%;
                 margin: 4em auto;
@@ -102,43 +106,33 @@
             @include respond-to($desktop) {
                 width: 500px;
             }
-        }
 
-        .main__description--username::-webkit-input-placeholder,
-        .main__description--password::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-          color: $dark-blue-primary;
-          text-transform: uppercase;
-          font-family: $main-font;
-          font-size: 14px;
-          letter-spacing: 1px;
-          line-height: 1.2em;
-        }
+            &::-webkit-input-placeholder {
+                color: $dark-blue-primary;
+                text-transform: uppercase;
+                font-family: $main-font;
+                font-size: 14px;
+                letter-spacing: 1px;
+                line-height: 1.2em;
+            }
 
-        .main__description--username::-moz-placeholder,
-        .main__description--password::-moz-placeholder { /* Firefox 19+ */
-          color: $dark-blue-primary;
-          text-transform: uppercase;
-          font-family: $main-font;
-          font-size: 14px;
-          letter-spacing: 1px;
-        }
+            &::-moz-placeholder {
+                color: $dark-blue-primary;
+                text-transform: uppercase;
+                font-family: $main-font;
+                font-size: 14px;
+                letter-spacing: 1px;
+                line-height: 1.2em;
+            }
 
-        .main__description--username:-ms-input-placeholder,
-        .main__description--password:-ms-input-placeholder { /* IE 10+ */
-          color: $dark-blue-primary;
-          text-transform: uppercase;
-          font-family: $main-font;
-          font-size: 14px;
-          letter-spacing: 1px;
-        }
-
-        .main__description--username:-moz-placeholder ,
-        .main__description--password:-moz-placeholder  { /* Firefox 18- */
-          color: $dark-blue-primary;
-          text-transform: uppercase;
-          font-family: $main-font;
-          font-size: 14px;
-          letter-spacing: 1px;
+            &::-ms-input-placeholder {
+                color: $dark-blue-primary;
+                text-transform: uppercase;
+                font-family: $main-font;
+                font-size: 14px;
+                letter-spacing: 1px;
+                line-height: 1.2em;
+            }
         }
 
         .main__description--button {
