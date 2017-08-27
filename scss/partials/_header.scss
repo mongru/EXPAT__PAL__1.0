@@ -142,6 +142,7 @@
     top: 11%;
     right: 12%;
 
+
     .hamburger__stripe {
         background-color: transparent;
 
@@ -179,6 +180,10 @@
     position: absolute;
     top: 0;
     right: 0;
+    @include respond-to($desktop) {
+        display: none !important;
+    }
+
 
     &__menu {
         position: relative;
