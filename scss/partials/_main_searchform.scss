@@ -1,17 +1,20 @@
+#main__searchform {
+    padding-top: 120px;
+}
 .main__searchform--container {
     width: 100%;
-    height: 200px;
+    height: 150px;
     position: relative;
-    padding-top: 50px;
+    // padding-top: 50px;
     display: flex;
     justify-content: center;
     @include respond-to($tablet-portrait) {
-        height: 230px;
-        padding-top: 50px;
+        height: 150px;
+        // padding-top: 50px;
     }
     @include respond-to($desktop) {
-        padding-top: 50px;
-        height: 230px;
+        // padding-top: 50px;
+        height: 150px;
     }
 
     .main__searchform--form {
@@ -121,29 +124,44 @@
 
       #pac-input {
         background-color: $white;
-        // font-family: 'Roboto Mono' monospace;
+        font-family: $main-font;
         font-size: 15px;
-        font-weight: 300;
-        padding: 6px 11px 6px 13px;
         text-overflow: ellipsis;
         width: calc(100% - 0.2em);
         height: 45px;
         margin-top: 30px;
+        // margin: 3em 0 2em 0;
+        color: $dark-blue-primary;
+        letter-spacing: 1px;
+
         @include respond-to($desktop) {
             width: 440px;
         }
-      }
+        &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            color: $dark-blue-primary;
+            font-family: $main-font;
+            font-size: 18px;
+            letter-spacing: 1px;
+            line-height: 1.2em;
+        }
 
-      #pac-input:focus {
-        border-color: $turquoise-secondary-main;
-      }
+        &::-moz-placeholder { /* Firefox 19+ */
+            color: $dark-blue-primary;
+            font-family: $main-font;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
 
-      #pac-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-        color: $dark-blue-primary;
-        font-family: $main-font;
-        font-size: 18px;
-        letter-spacing: 1px;
-        line-height: 1.2em;
+        &::-ms-input-placeholder { /* IE 10+ */
+            color: $dark-blue-primary;
+            font-family: $main-font;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        &:focus {
+            border-color: $turquoise-secondary-main;
+        }
       }
 
       #title {

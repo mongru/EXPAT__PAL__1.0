@@ -1,5 +1,4 @@
 .contact__container {
-
     position: relative;
     // height: 1000px;
     background-color: $white;
@@ -89,12 +88,6 @@
             background-color: $neutral-grey;
             border-style: none;
 
-            &::-webkit-input-placeholder {
-                color: $black;
-                font-family: 'Roboto Mono', monospace;
-                font-size: 16px;
-                padding-left: 1em;
-            }
         }
     }
 

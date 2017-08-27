@@ -185,7 +185,7 @@
 
     @include respond-to($large-desktop) {
         top: 64%;
-        transform: scaleX(1.2) scaleY(25);
+        transform: scaleX(1.2) scaleY(26);
         transition-duration: 1s;
     }
 }
