@@ -277,7 +277,7 @@
 }
 
 
-@-webkit-keyframes shake {
+@keyframes shake {
  from {
     -webkit-transform: rotate(10deg);
  }

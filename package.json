@@ -19,6 +19,7 @@
   "author": "Monika Grubizna",
   "license": "MIT",
   "dependencies": {
+    "firebase": "^4.3.0",
     "react": "^15.4.0",
     "react-dom": "^15.4.0"
   },
