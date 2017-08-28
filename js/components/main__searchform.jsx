@@ -9,10 +9,10 @@ export class MainSearchForm extends React.Component {
       }
 
       componentWillMount(){
-          /* Create reference to messages in Firebase Database */
+          /* Create reference to locations in Firebase Database */
           let locationsRef = fire.database().ref('locations').orderByKey().limitToLast(100);
           locationsRef.on('child_added', snapshot => {
-            /* Update React state when message is added at Firebase Database */
+            /* Update React state when location is added at Firebase Database */
             let location = { text: snapshot.val(), id: snapshot.key };
             this.setState({ location: [location].concat(this.state.locations) });
           })
@@ -20,7 +20,7 @@ export class MainSearchForm extends React.Component {
 
         addLocation(e){
             e.preventDefault(); // <- prevent form submit from reloading the page
-            /* Send the message to Firebase */
+            /* Send the location to Firebase */
             if (this.inputEl.value.length > 3) {
                 fire.database().ref('locations').push( this.inputEl.value );
                 this.inputEl.value = ''; // <- clear the input
