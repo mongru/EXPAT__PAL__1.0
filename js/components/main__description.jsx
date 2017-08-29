@@ -35,8 +35,8 @@ export class MainDescription extends React.Component {
                         <div className="col-5">
                             <figure className="main__description--image">
                                 <img className="main__description--device" src="./assets/Device.png" alt="device snapshot" />
-                                <img className="main__description--screen1" src="./assets/Login__screen.png" alt="login screen snapshot" />
-                                <img className="main__description--screen2" src="./assets/Profile__screen.png" alt="profile screen snapshot" />
+                                <img className="main__description--screen1" src="./assets/Login__screen.jpg" alt="login screen snapshot" />
+                                <img className="main__description--screen2" src="./assets/Profile__screen.jpg" alt="profile screen snapshot" />
                             </figure>
                             <div className="main__description--dots">
                                 <div className="main__description--dot"></div>

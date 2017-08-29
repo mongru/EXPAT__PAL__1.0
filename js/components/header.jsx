@@ -6,14 +6,16 @@ class NavMobile extends React.Component {
         super (props);
         this.state = {
             displayBurger: "block",
-            displayUl: "none"
-        }
+            displayUl: "none",
+            mobileNavVisible: true
+        };
     }
 
     handleClick = () => {
         this.setState ({
             displayBurger: this.state.displayBurger=="block"?"none":"block",
-            displayUl: this.state.displayUl=="none"?"block":"none"
+            displayUl: this.state.displayUl=="none"?"block":"none",
+            mobileNavVisible: this.state.mobileNavVisible=="true"?"false":"true"
         });
     }
 
@@ -24,19 +26,21 @@ class NavMobile extends React.Component {
         const styleObjUl={
             display: this.state.displayUl
         }
-        return (<div>
-                    <span className="hamburger" onClick={this.handleClick}>
+
+        return (
+                <div>
+                    <span style={styleObjBurger} className="hamburger" onClick={this.handleClick}>
                         <span className="hamburger__stripe"></span>
                     </span>
                     <nav style={styleObjUl} className="nav__mobile">
                         <ul className="nav__mobile__menu">
-                            <li className="nav__mobile__menu--item">
+                            <li key={1} className="nav__mobile__menu--item">
                                 <a href="#main__searchform" className="nav__mobile__menu--link">How it works</a>
                             </li>
-                            <li className="nav__mobile__menu--item">
+                            <li key={2} className="nav__mobile__menu--item">
                                 <a href="#main__description" className="nav__mobile__menu--link">Log in</a>
                             </li>
-                            <li className="nav__mobile__menu--item">
+                            <li key={3} className="nav__mobile__menu--item">
                                 <a href="#" className="nav__mobile__menu--link">Sign up</a>
                             </li>
                         </ul>
@@ -48,6 +52,76 @@ class NavMobile extends React.Component {
             )
             }
         }
+
+class Nav extends React.Component {
+    constructor (props) {
+        super (props);
+        this.state = {
+            windowWidth: window.innerWidth,
+            mobileNavVisible: false
+        };
+    }
+
+    handleResize() {
+        this.setState({windowWidth: window.innerWidth});
+    }
+
+    navigationLinks() {
+        return (
+            <nav>
+                <ul className="nav__links">
+                    <li className="nav__links--link">
+                        <a className="nav__links--link" href="#main__searchform">
+                            How it works
+                        </a>
+                    </li>
+                    <li className="nav__links--link">
+                        <a className="nav__links--link" href="#main__description">
+                            Log in
+                        </a>
+                    </li>
+                    <li className="nav__links--link">
+                        <a className="nav__links--link" href="#">
+                            Sign up
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        );
+    }
+
+    // renderMobileNav() {
+    //     if(this.state.mobileNavVisible) {
+    //         return <NavMobile mobileNavVisible={this.state.mobileNavVisible}/>;
+    //     }
+    // }
+
+    renderNavigation() {
+        if(this.state.windowWidth <= 768) {
+            return (
+                <NavMobile mobileNavVisible={this.state.mobileNavVisible}/>
+            );
+        } else {
+            return (<div className="col-12">{this.navigationLinks()}</div>);
+        }
+    }
+
+    componentDidMount() {
+        window.addEventListener('resize', this.handleResize.bind(this));
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleResize.bind(this));
+    }
+
+    render() {
+        return  (
+            <div className="col-7">
+                {this.renderNavigation()}
+            </div>
+        )
+    }
+}
 
 export class Header extends React.Component {
 
@@ -65,28 +139,7 @@ export class Header extends React.Component {
                                     </a>
                                 </div>
                             </div>
-                            <nav>
-                                <div className="col-7">
-                                    <ul className="nav__links">
-                                        <li className="nav__links--link">
-                                            <a className="nav__links--link" href="#main__searchform">
-                                                How it works
-                                            </a>
-                                        </li>
-                                        <li className="nav__links--link">
-                                            <a className="nav__links--link" href="#main__description">
-                                                Log in
-                                            </a>
-                                        </li>
-                                        <li className="nav__links--link">
-                                            <a className="nav__links--link" href="#">
-                                                Sign up
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <NavMobile />
-                                </div>
-                            </nav>
+                            <Nav />
                         </div>
                     </div>
                 </div>

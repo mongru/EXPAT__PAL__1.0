@@ -3,3 +3,5 @@ DS_Store
 npm-debug.log
 google__api.txt
 js/components/map.js
+firebase.json
+firebaserc

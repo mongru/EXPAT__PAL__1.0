@@ -1,5 +1,5 @@
 import firebase from 'firebase'
-var config = {
+const config = {
   apiKey: "AIzaSyANjQ6WAUfd8wjZEIUqsfFi_1uBHPNUFFg",
   authDomain: "expatpal-cd11e.firebaseapp.com",
   databaseURL: "https://expatpal-cd11e.firebaseio.com",
@@ -7,5 +7,5 @@ var config = {
   storageBucket: "expatpal-cd11e.appspot.com",
   messagingSenderId: "743307005991"
 };
-var fire = firebase.initializeApp(config);
+const fire = firebase.initializeApp(config);
 export default fire;

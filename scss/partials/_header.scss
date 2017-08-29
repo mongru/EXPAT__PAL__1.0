@@ -180,9 +180,9 @@
     position: absolute;
     top: 0;
     right: 0;
-    @include respond-to($desktop) {
-        display: none !important;
-    }
+    // @include respond-to($desktop) {
+    //     display: none !important;
+    // }
 
 
     &__menu {

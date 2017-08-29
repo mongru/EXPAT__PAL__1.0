@@ -37,7 +37,7 @@ export class MainSearchForm extends React.Component {
                 <div className="container main__searchform--container">
                     <div className="row">
                         <div className="col-12">
-                            <form className="main__searchform--form" onSubmit={(e) => this.addLocation(e).bind(this)}>
+                            <form className="main__searchform--form" onSubmit={(e) => this.addLocation(e)}>
                                 <fieldset>
                                     <legend className="main__searchform--title">Find people in your area</legend>
                                     <input id="pac-input" type="text" ref={ el => this.inputEl = el }
