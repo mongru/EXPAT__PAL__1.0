@@ -1,16 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// fetch("https://randomuser.me/api/")
-//   .then(res => res.json()
-//   .then(res => {
-//
-//       console.log(res);
-//       console.log(res.results[0].name.first, res.results[0].name.last, res.results[0].location.city, res.results[0].location.street, res.results[0].picture.large);
-//
-//   }));
-
-
 
 export class MainUser extends React.Component {
     constructor(props){
@@ -20,27 +10,50 @@ export class MainUser extends React.Component {
             lastName: "",
             street: "",
             city: "",
-            avatar: ""
+            avatar: "",
+            error: false
         }
+    }
+
+    // -------> function for checking if server res is ok
+    handleErrors = (res) => {
+        if(!res.ok) {
+            throw Error(res.statusText);
+        }
+        return res;
+    }
+
+    // function for getting random user info & avatar from API
+    createUser = () => {
+        const userUrl = "https://randomuser.me/api/";
+
+        fetch(userUrl)
+            .then(this.handleErrors)
+            .then(res => res.json()
+            .then(res => {
+                // console.log(res);
+                // console.log(res.results[0].name.first, res.results[0].name.last, res.results[0].location.city, res.results[0].location.street, res.results[0].picture.large);
+
+                    this.setState({
+                        name: res.results[0].name.first,
+                        lastName: res.results[0].name.last,
+                        street: res.results[0].location.street,
+                        city: res.results[0].location.city,
+                        avatar: res.results[0].picture.large
+                    });
+                }) )
+            .catch((err) => {
+                this.setState ({
+                    error: true
+                });
+            })
     }
 
     componentDidMount() {
 
-      fetch("https://randomuser.me/api/")
-        .then(res => res.json()
-        .then(res => {
+        this.createUser();
 
-            console.log(res);
-
-                this.setState({
-                    name: res.results[0].name.first,
-                    lastName: res.results[0].name.last,
-                    street: res.results[0].location.street,
-                    city: res.results[0].location.city,
-                    avatar: res.results[0].picture.large
-                })
-            }) )
-        }
+    }
 
     render() {
         return (
@@ -59,7 +72,6 @@ export class MainUser extends React.Component {
 export class MainUsers extends React.Component {
 
     render(){
-
         return (
             <section className="main__users">
                 <div className="container main__users--container">

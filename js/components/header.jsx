@@ -90,12 +90,6 @@ class Nav extends React.Component {
         );
     }
 
-    // renderMobileNav() {
-    //     if(this.state.mobileNavVisible) {
-    //         return <NavMobile mobileNavVisible={this.state.mobileNavVisible}/>;
-    //     }
-    // }
-
     renderNavigation() {
         if(this.state.windowWidth <= 768) {
             return (
