@@ -28,7 +28,7 @@ npm start
 
 * ReactJS
 * JavaScript (ES5, ES6)
-* jQuery (for simple animations)
+* ~~jQuery (for simple animations)~~ Finally handled all animations with vanilla js and css classes. One script less to load :tada:
 * SCSS for styling
 * Webpack + Babel + Autoprefixer
 
