@@ -12,26 +12,71 @@ export class MainInfo extends React.Component {
 
     handleScrollText = (event) => {
         // console.log(event);
-        if (this.scrollText !== null) {
-            if (($(document).scrollTop() + $(window).height() / 8) > ($('body').height() / 8)) {
-                $(this.scrollText).attr('class', 'text-beforeScroll');
-            } else {
-                $(this.scrollText).attr('class', 'text-afterScroll');
+        const bodyHeight = document.body.clientHeight;
+        const windowHeight = window.innerHeight;
+        const body = document.body;
+        const docScrollTop = window.pageYOffset;
+
+        if(this.scrollText !== null) {
+            if((docScrollTop + windowHeight / 8) > bodyHeight / 8) {
+                    this.scrollText.classList.add('text-beforeScroll');
+                    this.scrollText.classList.remove('text-afterScroll');
+                    // console.log("Scroll działa");
+                    // console.log(this.scrollText.className);
+                } else {
+                    this.scrollText.classList.add('text-afterScroll');
+                    this.scrollText.classList.remove('text-beforeScroll');
+                }
             }
         }
-    }
+
+
+        // if (this.scrollText !== null) {
+        //     if (($(document).scrollTop() + $(window).height() / 8) > ($('body').height() / 8)) {
+        //         $(this.scrollText).attr('class', 'text-beforeScroll');
+        //     } else {
+        //         $(this.scrollText).attr('class', 'text-afterScroll');
+        //     }
+        // }
+    // }
 
     handleScrollStripe = (event) => {
 
-        // console.log(event);
-        if (this.scrollStripe !== null) {
-            if (($(document).scrollTop() + $(window).height() / 2) > ($('body').height() / 2)) {
-                $(this.scrollStripe).attr('class', 'stripe-beforeScroll');
-            } else {
-                $(this.scrollStripe).attr('class', 'stripe-afterScroll');
+        const bodyHeight = document.body.clientHeight;
+        const windowHeight = window.innerHeight;
+        const body = document.body;
+        const docScrollTop = window.pageYOffset;
+
+
+        // console.log(bodyHeight);
+        // console.log(windowHeight);
+        // console.log(body);
+        // console.log(docScrollTop);
+        // console.log(this.scrollStripe);
+
+
+        if(this.scrollStripe !== null) {
+            if((docScrollTop + windowHeight / 2) > bodyHeight / 2) {
+                    this.scrollStripe.classList.add('stripe-beforeScroll');
+                    this.scrollStripe.classList.remove('stripe-afterScroll');
+                    // console.log("Scroll działa");
+                    // console.log(this.scrollStripe.className);
+                } else {
+                    this.scrollStripe.classList.add('stripe-afterScroll');
+                    this.scrollStripe.classList.remove('stripe-beforeScroll');
+                }
             }
         }
-    }
+
+        // console.log(event);
+        // if (this.scrollStripe !== null) {
+        //     if (($(document).scrollTop() + $(window).height() / 2) > ($('body').height() / 2)) {
+        //         $(this.scrollStripe).attr('class', 'stripe-beforeScroll');
+        //     } else {
+        //         $(this.scrollStripe).attr('class', 'stripe-afterScroll');
+        //     }
+        // }
+    // }
 
     componentDidMount() {
         window.addEventListener('scroll', this.handleScrollText);
@@ -47,7 +92,7 @@ export class MainInfo extends React.Component {
     render(){
 
         return (
-            
+
             <main>
                 <section className="main">
                     <div className="container main__info">
