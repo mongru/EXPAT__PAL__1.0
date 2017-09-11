@@ -129,7 +129,7 @@ export class Header extends React.Component {
                             <div className="col-5">
                                 <div className="menu__logo">
                                     <a href="#">
-                                        <img src="./assets/logo__negative.png" alt="logo expatpal" />
+                                        <img src="./assets/logo__negative__small.png" alt="logo expatpal" />
                                     </a>
                                 </div>
                             </div>

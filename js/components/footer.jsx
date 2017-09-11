@@ -14,7 +14,7 @@ export class Footer extends React.Component {
                             </a>
                             <div className="footer__container--logo">
                                 <a href="#">
-                                    <img src="./assets/logo.png" alt="logo expatpal"/>
+                                    <img src="./assets/logo__footer__small.png" alt="logo expatpal"/>
                                 </a>
                             </div>
                         </div>

@@ -1,13 +1,41 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import fire from '../fire';
+
 export class MainDescription extends React.Component {
 
-    handleLogin(e) {
-        e.preventDefault()
+    constructor(props){
+        super(props);
+        this.state=({
+            loggedIn: false
+        });
+    }
+
+    handleLogin = (e) => {
+        e.preventDefault();
+        if(this.inputEl.value.length>4&&this.inputPass.value.length>8) {
+            let username = fire.database().ref('user_profiles').push( this.inputEl.value );
+            let userPass = fire.database().ref('user_pass').push( this.inputPass.value );
+            console.log("added to firebase");
+            this.inputEl.value = '';
+            this.inputPass.value = '';
+            this.setState({
+                loggedIn: true
+            });
+            alert('Thank you for creating your account! Your details have been added to our database')
+        } else {
+            alert('Your username must be at least 4 letters long. Your password must have at least 8 characters. ')
+        }
     }
 
     render(){
+
+        let loginMessage = 'Thank you for creating your account! Your details have been added to our database';
+        if(this.state.loggedIn === true) {
+            loginMessage = <div>{loginMessage}</div>;
+        }
+
         return (
             <section id="main__description" className="main__description">
                 <div className="container main__description--container">
@@ -26,15 +54,16 @@ export class MainDescription extends React.Component {
                             </article>
 
                             <form onSubmit={(e) => this.handleLogin(e)} className="main__description--form">
-                                <input className="main__description--username" type="text" name="username" placeholder="username"></input>
-                                <input className="main__description--password" type="password" name="password" placeholder="password"></input>
+                                <input className="main__description--username" type="text" name="username" placeholder="username" ref={ el => this.inputEl = el }></input>
+                                <input className="main__description--password" type="password" name="password" placeholder="password" ref={ el => this.inputPass = el }></input>
                                 <button onClick={(e) => this.handleLogin(e)} className="main__description--button">Login</button>
+                                <div style={{display:"none"}}>{loginMessage}</div>
                             </form>
 
                         </div>
                         <div className="col-5">
                             <figure className="main__description--image">
-                                <img className="main__description--device" src="./assets/Device.png" alt="device snapshot" />
+                                <img className="main__description--device" src="./assets/Device_small.png" alt="device snapshot" />
                                 <img className="main__description--screen1" src="./assets/Login__screen.jpg" alt="login screen snapshot" />
                                 <img className="main__description--screen2" src="./assets/Profile__screen.jpg" alt="profile screen snapshot" />
                             </figure>

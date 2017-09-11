@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Router, Route, IndexRoute } from 'react-router';
 
 import {Header} from './header.jsx';
 import {MainInfo} from './main__info.jsx';
@@ -17,10 +18,11 @@ export class Template extends React.Component {
             <MainInfo />
             <MainDescription />
             <MainSearchForm />
-            <MainUsers />
+            {/* <MainUsers /> */}
             <ContactForm />
             <Footer />
         </div>
+
     )
   }
 }

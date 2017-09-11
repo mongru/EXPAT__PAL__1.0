@@ -5,3 +5,11 @@ google__api.txt
 js/components/map.js
 firebase.json
 firebaserc
+assets/Background__photo__tint.png
+assets/Background__photo.png
+assets/Device.png
+assets/Login__screen.png
+assets/Profile__screen.png
+assets/logo__negative.png
+assets/logo.png
+dist/google_mapinit.js

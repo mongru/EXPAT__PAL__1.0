@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function(){
     console.log("Google Maps ready :)");
 
     function initMap(lat, lng) {
-        var warsaw = {lat: lat, lng: lng};
+        var currLocation = {lat: lat, lng: lng};
         var map = new google.maps.Map(document.getElementById('map'), {
             center: {
                 lat: lat,
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function(){
         });
 
         var marker = new google.maps.Marker({
-          position: warsaw,
+          position: currLocation,
           map: map
         });
 
@@ -25,8 +25,7 @@ document.addEventListener("DOMContentLoaded", function(){
         map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
 
         var autocomplete = new google.maps.places.Autocomplete(input);
-
-        console.log(autocomplete);
+        // console.log(autocomplete);
 
 
         // Bind the map's bounds (viewport) property to the autocomplete object,
@@ -82,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function(){
         });
     }
 
-    // Geolocation of device
+    //-------> Geolocation of device
     var options = {
     enableHighAccuracy: true,
     timeout: 6000,
@@ -92,25 +91,24 @@ document.addEventListener("DOMContentLoaded", function(){
     function success(position) {
         var crd = position.coords;
 
-        console.log(position);
-        console.log('Your current position is:');
-        console.log(`Latitude : ${crd.latitude}`);
-        console.log(`Longitude: ${crd.longitude}`);
+        // console.log(position);
+        // console.log('Your current position is:');
+        // console.log(`Latitude : ${crd.latitude}`);
+        // console.log(`Longitude: ${crd.longitude}`);
         var latitude = crd.latitude;
         var longitude = crd.longitude;
 
+        //-------> Init Google Map based on users current location
         initMap(latitude, longitude);
-        // console.log(`More or less ${crd.accuracy} meters.`);
     };
 
+    // if geolocation fails or user decides to block location services, center the map and put the marker in the default location
     function error(err) {
-        initMap(52.250237, 21.012180);
+        var defaultLat = 52.250237;
+        var defaultLng = 21.012180;
+        initMap(defaultLat, defaultLng);
         console.warn(`ERROR(${err.code}): ${err.message}`);
     };
 
     navigator.geolocation.getCurrentPosition(success, error, options);
-
-// Init Google Map
-    // initMap();
-
-})
+});
