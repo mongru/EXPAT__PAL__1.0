@@ -59,7 +59,7 @@ export class MainUser extends React.Component {
                         console.log(res.results[0].formatted_address);
                         const formattedAddress = res.results[0].formatted_address;
                         randomUserProfile.location = formattedAddress;
-                        fire.database().ref('random_user').push( randomUserProfile);
+                        fire.database().ref('random_user').push(randomUserProfile);
                         this.setState({
                             location: formattedAddress
                         });
@@ -99,7 +99,7 @@ export class MainUser extends React.Component {
             name: randomName,
             lastName: randomLastName,
             avatar: randomAvatar,
-            city: randomLocation
+            location: randomLocation
         })
     }
 

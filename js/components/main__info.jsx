@@ -10,6 +10,7 @@ export class MainInfo extends React.Component {
         };
     }
 
+
     handleScrollText = (event) => {
         // console.log(event);
         const bodyHeight = document.body.clientHeight;
