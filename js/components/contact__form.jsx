@@ -8,9 +8,14 @@ export class ContactForm extends React.Component {
     handleMessage = (e) => {
         e.preventDefault();
         if(this.inputName.value.length>4&&this.inputEmail.value.length>8&&this.inputMessage.value.length>8) {
-            let contactName = fire.database().ref('contact_name').push( this.inputName.value );
-            let contactEmail = fire.database().ref('contact_email').push( this.inputEmail.value );
-            let contactMessage = fire.database().ref('contact_message').push( this.inputMessage.value );
+            const contactForm = {
+                name: this.inputName.value,
+                email: this.inputEmail.value,
+                message: this.inputMessage.value
+            }
+
+            const newContactForm = fire.database().ref('contact').push(contactForm);
+
             console.log("added to firebase");
             alert('Thank you for your message! We will get back to you shortly')
             this.inputName.value = '';

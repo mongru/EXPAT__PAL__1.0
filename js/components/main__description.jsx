@@ -14,11 +14,16 @@ export class MainDescription extends React.Component {
 
     handleLogin = (e) => {
         e.preventDefault();
-        if(this.inputEl.value.length>4&&this.inputPass.value.length>8) {
-            let username = fire.database().ref('user_profiles').push( this.inputEl.value );
-            let userPass = fire.database().ref('user_pass').push( this.inputPass.value );
-            console.log("added to firebase");
-            this.inputEl.value = '';
+        if(this.inputName.value.length>4&&this.inputPass.value.length>8) {
+
+            const userAccount = {
+                name: this.inputName.value,
+                pass: this.inputPass.value
+            }
+
+            const newUserAcconunt = fire.database().ref('user_profiles').push(userAccount);
+            // console.log("added to firebase");
+            this.inputName.value = '';
             this.inputPass.value = '';
             this.setState({
                 loggedIn: true
@@ -54,7 +59,7 @@ export class MainDescription extends React.Component {
                             </article>
 
                             <form onSubmit={(e) => this.handleLogin(e)} className="main__description--form">
-                                <input className="main__description--username" type="text" name="username" placeholder="username" ref={ el => this.inputEl = el }></input>
+                                <input className="main__description--username" type="text" name="username" placeholder="username" ref={ el => this.inputName = el }></input>
                                 <input className="main__description--password" type="password" name="password" placeholder="password" ref={ el => this.inputPass = el }></input>
                                 <button onClick={(e) => this.handleLogin(e)} className="main__description--button">Login</button>
                                 <div style={{display:"none"}}>{loginMessage}</div>
