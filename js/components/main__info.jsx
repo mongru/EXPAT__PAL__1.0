@@ -20,8 +20,8 @@ export class MainInfo extends React.Component {
 
         if(this.scrollText !== null) {
             if((docScrollTop + windowHeight / 8) > bodyHeight / 8) {
-                    this.scrollText.classList.toggle('text-beforeScroll');
-                    this.scrollText.classList.toggle('text-afterScroll');
+                    this.scrollText.classList.add('text-beforeScroll');
+                    this.scrollText.classList.remove('text-afterScroll');
 
                     // console.log("Scroll works");
                     // console.log(this.scrollText.className);
