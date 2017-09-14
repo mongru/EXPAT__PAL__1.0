@@ -85,10 +85,10 @@ export class MainSearchForm extends React.Component {
               const randomLastName = Object.values(users.last)[Math.floor(Math.random() * lastValues.length)];
               const randomAvatar = Object.values(users.avatars)[Math.floor(Math.random() * avatarValues.length)];
               const randomLocation = Object.values(users.locations)[Math.floor(Math.random() * locationValues.length)];
-              console.log(randomName);
-              console.log(randomLastName);
-              console.log(randomAvatar);
-              console.log(randomLocation);
+            //   console.log(randomName);
+            //   console.log(randomLastName);
+            //   console.log(randomAvatar);
+            //   console.log(randomLocation);
 
               this.setState({
                   name: randomName,

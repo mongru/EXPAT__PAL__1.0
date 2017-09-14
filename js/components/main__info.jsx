@@ -15,13 +15,14 @@ export class MainInfo extends React.Component {
         // console.log(event);
         const bodyHeight = document.body.clientHeight;
         const windowHeight = window.innerHeight;
-        const body = document.body;
+        // const body = document.body;
         const docScrollTop = window.pageYOffset;
 
         if(this.scrollText !== null) {
             if((docScrollTop + windowHeight / 8) > bodyHeight / 8) {
-                    this.scrollText.classList.add('text-beforeScroll');
-                    this.scrollText.classList.remove('text-afterScroll');
+                    this.scrollText.classList.toggle('text-beforeScroll');
+                    this.scrollText.classList.toggle('text-afterScroll');
+
                     // console.log("Scroll works");
                     // console.log(this.scrollText.className);
                 } else {
@@ -36,13 +37,11 @@ export class MainInfo extends React.Component {
 
         const bodyHeight = document.body.clientHeight;
         const windowHeight = window.innerHeight;
-        const body = document.body;
         const docScrollTop = window.pageYOffset;
 
 
         // console.log(bodyHeight);
         // console.log(windowHeight);
-        // console.log(body);
         // console.log(docScrollTop);
         // console.log(this.scrollStripe);
 

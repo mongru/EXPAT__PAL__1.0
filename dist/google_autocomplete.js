@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 return;
             }
 
-            console.log(autocomplete.gm_accessors_.place.Gc.formattedPrediction);
+            // console.log(autocomplete.gm_accessors_.place.Gc.formattedPrediction);
 
 
             // If the place has a geometry, then present it on a map.
