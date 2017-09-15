@@ -39,26 +39,12 @@
             font-size: 14px;
             letter-spacing: 1px;
 
-            &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            &::placeholder {
                 color: $dark-blue-primary;
                 font-family: $main-font;
                 font-size: 14px;
                 letter-spacing: 1px;
                 height: 40px;
-            }
-
-            &::-moz-placeholder { /* Firefox 19+ */
-                color: $dark-blue-primary;
-                font-family: $main-font;
-                font-size: 14px;
-                letter-spacing: 1px;
-            }
-
-            &::-ms-input-placeholder { /* IE 10+ */
-                color: $dark-blue-primary;
-                font-family: $main-font;
-                font-size: 14px;
-                letter-spacing: 1px;
             }
         }
     }
@@ -86,7 +72,6 @@
         display: block;
         height: 600px;
         width: 100vw;
-        // border: 2px solid $black;
         margin: 0 auto;
 
       }
@@ -122,10 +107,10 @@
           width: 400px;
       }
 
-      #pac-container {
-        // padding-bottom: 12px;
-        // margin-right: 12px;
-      }
+    //   #pac-container {
+    //     // padding-bottom: 12px;
+    //     // margin-right: 12px;
+    //   }
 
       .pac-controls {
         display: inline-block;
@@ -146,33 +131,18 @@
         width: calc(100% - 0.2em);
         height: 45px;
         margin-top: 30px;
-        // margin: 3em 0 2em 0;
         color: $dark-blue-primary;
         letter-spacing: 1px;
 
         @include respond-to($desktop) {
             width: 440px;
         }
-        &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        &::placeholder {
             color: $dark-blue-primary;
             font-family: $main-font;
             font-size: 18px;
             letter-spacing: 1px;
             line-height: 1.2em;
-        }
-
-        &::-moz-placeholder { /* Firefox 19+ */
-            color: $dark-blue-primary;
-            font-family: $main-font;
-            font-size: 14px;
-            letter-spacing: 1px;
-        }
-
-        &::-ms-input-placeholder { /* IE 10+ */
-            color: $dark-blue-primary;
-            font-family: $main-font;
-            font-size: 14px;
-            letter-spacing: 1px;
         }
 
         &:focus {

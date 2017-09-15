@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+
 import {MainUser} from './main__users.jsx';
 import {MainUsers} from './main__users.jsx';
+
+import {MapWithControlledZoom} from './google_map.jsx';
 
 import fire from '../fire';
 import users from '../../expatpal-cd11e-export.json';
@@ -108,6 +111,7 @@ export class MainSearchForm extends React.Component {
 
         // let neighbours =
         // TODO find a better solution for rendering neighbours
+        // TODO use Google Maps for React 
 
         if(this.state.userInput === true) {
             return (
@@ -170,7 +174,7 @@ export class MainSearchForm extends React.Component {
                         </div>
                     </div>
                 </div>
-
+                {/* <MapWithControlledZoom /> */}
                 <div id="map"></div>
                 <div id="infowindow-content">
                     <img src="" width="16" height="16" id="place-icon"/>

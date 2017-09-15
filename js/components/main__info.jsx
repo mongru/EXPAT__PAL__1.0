@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 
 export class MainInfo extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            transform: this.props.transform
-        };
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         transform: this.props.transform
+    //     };
+    // }
 
 
     handleScrollText = (event) => {
