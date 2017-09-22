@@ -40,7 +40,7 @@ Have fun editing!
 
 * ReactJS
 * JavaScript (ES5, ES6)
-* ~~jQuery (for simple animations)~~ Finally handled all animations with vanilla js and css classes. One script less to load :tada:
+* ~~jQuery (for simple animations)~~ Eventually handled all animations with vanilla js and css classes. One script less to load :tada:
 * SCSS for styling
 * Webpack + Babel + Autoprefixer
 
@@ -52,8 +52,8 @@ Have fun editing!
 
 # TODO's:
 * Improve RWD :heavy_check_mark: :tada:
-* Improve code splitting
-* Add form actions & events
+* Improve code splitting :heavy_check_mark: :seedling:
+* Add form actions & events :seedling:
 * [Firebase](https://rometools.github.io/rome/) - realtime database :heavy_check_mark: :tada: :seedling:
 
 ## Author

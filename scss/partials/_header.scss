@@ -1,4 +1,4 @@
-// Header Component
+/* HEADER */
 
 .menu {
     width: 100%;
@@ -7,15 +7,10 @@
     z-index: 99999;
     padding: 20px 0;
 
-    @include respond-to($desktop) {
-
-    }
-
     &__logo img {
         width: 150px;
         display: inline-block;
         padding-left: 2em;
-
         @include respond-to($desktop) {
             width: 180px;
             padding: 10px 0 0 20px;
@@ -27,7 +22,6 @@
     .nav__links {
         display: none;
         color: $white;
-
         @include respond-to($desktop) {
             display: flex;
             justify-content: space-between;
@@ -44,7 +38,6 @@
         &--link {
             color: $white;
             text-decoration: none;
-
             &::after {
                 content: "";
                 width: 0;
@@ -55,21 +48,17 @@
                 margin-top: -28px;
                 transition: width .3s;
             }
-
             &:visited {
                 color: $white;
             }
-
             &:hover{
                 color: $turquoise-secondary-main;
-
                 &::after {
                     width: 100%;
                 }
             }
             &:active {
                 color: $white;
-
                 &::after {
                     width: 100%;
                 }
@@ -142,7 +131,6 @@
     top: 11%;
     right: 12%;
 
-
     .hamburger__stripe {
         background-color: transparent;
 
@@ -180,10 +168,6 @@
     position: absolute;
     top: 0;
     right: 0;
-    // @include respond-to($desktop) {
-    //     display: none !important;
-    // }
-
 
     &__menu {
         position: relative;
@@ -194,13 +178,11 @@
         &--item {
             padding: 20px;
             text-align: center;
-
         }
 
         &--link {
             text-decoration: none;
             color: white;
-
             &::after {
                 content: "";
                 width: 0;
@@ -211,21 +193,17 @@
                 margin-top: 8px;
                 transition: width .3s;
             }
-
             &:visited {
                 color: $white;
             }
-
             &:hover{
                 color: $turquoise-secondary-main;
-
                 &::after {
                     width: 100%;
                 }
             }
             &:active {
                 color: $white;
-
                 &::after {
                     width: 100%;
                 }

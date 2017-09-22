@@ -25,7 +25,6 @@
             margin-left: 2rem;
             line-height: 1.2em;
             color: $white;
-
             @include respond-to($tablet-portrait) {
                 font-size: 68px;
                 margin-top: 16rem;
@@ -168,21 +167,18 @@
     right: 0;
     transform: scaleX(1.2) scaleY(15);
     transition-duration: 1s;
-
     @include respond-to($tablet-portrait) {
         height: 260px;
         top: 30%;
         transform: scaleX(1.2) scaleY(12);
         // transition-duration: 2s;
     }
-
     @include respond-to($desktop) {
         height: 260px;
         top: 30%;
         transform: scaleX(1.2) scaleY(13);
         // transition-duration: 2s;
     }
-
     @include respond-to($large-desktop) {
         top: 64%;
         transform: scaleX(1.2) scaleY(26);
@@ -201,21 +197,18 @@
     right: 0;
     transform: scaleX(1) scaleY(1);
     transition-duration: 1s;
-
     @include respond-to($tablet-portrait) {
         height: 260px;
         top: 30%;
         transform: scaleX(1) scaleY(1);
         transition-duration: 1s;
     }
-
     @include respond-to($desktop) {
         height: 260px;
         top: 30%;
         transform: scaleX(1) scaleY(1);
         transition-duration: 1s;
     }
-
     @include respond-to($large-desktop) {
         top: 64%;
         transform: scaleX(1) scaleY(1);

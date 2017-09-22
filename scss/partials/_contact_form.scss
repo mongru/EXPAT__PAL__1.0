@@ -1,12 +1,11 @@
 .contact__container {
     position: relative;
-    // height: 1000px;
     background-color: $white;
 
     &--title {
         font-size: 20px;
         text-transform: uppercase;
-        padding: 3em 0  0 2em;
+        padding: 3em 0 0 2em;
         @include respond-to($desktop) {
             margin-left: 60px;
         }
@@ -16,14 +15,10 @@
         display: flex;
         justify-content: center;
         width: 100%;
-        @include respond-to($tablet-portrait) {
-
-        }
         @include respond-to($desktop) {
             justify-content: flex-end;
             padding: 0 0 0 3em;
         }
-
     }
 
     .title__circle {
@@ -38,7 +33,6 @@
             margin-left: 60px;
         }
     }
-
 
     .contact__form--input,
     .contact__form--message,
@@ -55,27 +49,6 @@
         font-size: 16px;
         line-height: 20px;
 
-        &::-webkit-input-placeholder {
-            color: $black;
-            font-family: $main-font;
-            font-size: 16px;
-            line-height: 20px;
-        }
-
-        &::-moz-placeholder {
-            color: $black;
-            font-family: $main-font;
-            font-size: 16px;
-            line-height: 20px;
-        }
-
-        &::-ms-input-placeholder {
-            color: $black;
-            font-family: $main-font;
-            font-size: 16px;
-            line-height: 20px;
-        }
-
         @include respond-to($tablet-portrait) {
             width: 480px;
         }
@@ -87,7 +60,6 @@
             margin: 3em 0;
             background-color: $neutral-grey;
             border-style: none;
-
         }
     }
 
@@ -101,7 +73,7 @@
         color: $white;
         text-transform: uppercase;
         border: none;
-        font-family: 'Roboto Mono', monospace;
+        font-family: $main-font;
         font-size: 16px;
         letter-spacing: 0.1em;
     }

@@ -5,8 +5,8 @@ import fire from '../fire';
 import users from '../../expatpal-cd11e-export.json';
 
 // -------> COMPONENTS
-import {MainUser} from './main__users.jsx';
-import {MainUsers} from './main__users.jsx';
+import { MainUser } from './main__user.jsx';
+import { MainUsers } from './main__users.jsx';
 
 export class MainSearchForm extends React.Component {
     constructor(props) {
@@ -38,22 +38,24 @@ export class MainSearchForm extends React.Component {
         const firstValues = Object.values(users.first);
         const lastValues = Object.values(users.last);
         const avatarValues = Object.values(users.avatars);
-        const locationValues = Object.values(users.locations);
+        // const locationValues = Object.values(users.locations);
         const randomName = Object.values(users.first)[Math.floor(Math.random() * firstValues.length)];
         const randomLastName = Object.values(users.last)[Math.floor(Math.random() * lastValues.length)];
         const randomAvatar = Object.values(users.avatars)[Math.floor(Math.random() * avatarValues.length)];
-        const randomLocation = Object.values(users.locations)[Math.floor(Math.random() * locationValues.length)];
+        // const randomLocation = Object.values(users.locations)[Math.floor(Math.random() * locationValues.length)];
         // console.log(randomName);
         // console.log(randomLastName);
         // console.log(randomAvatar);
         // console.log(randomLocation);
 
-        this.setState({name: randomName, lastName: randomLastName, avatar: randomAvatar, location: location, userInput: true});
+        this.setState({
+            name: randomName,
+            lastName: randomLastName,
+            avatar: randomAvatar,
+            location,
+            userInput: true});
     }
 
-    noMatchFound = () => {
-        <p>Sorry, we haven't found anyone registered in this area. Please try another place nearby.</p>
-    }
 
     addLocation = (e) => {
         e.preventDefault(); // <- prevent form submit from reloading the page
@@ -70,11 +72,12 @@ export class MainSearchForm extends React.Component {
                 console.log('location added to database');
 
                 this.state.location.map((city) => {
-                    // console.log(city.text);
+
                     if (city.text === this.inputEl.value) {
                         locationBank.push(city.text);
 
                         this.setState({
+                            // location: locationBank,
                             userInput: true,
                             noMatchFound: false
                         });
@@ -84,39 +87,31 @@ export class MainSearchForm extends React.Component {
                     } else {
                         console.log('no match found');
                         this.setState({
-                            userInput: true,
+                            // userInput: true,
                             noMatchFound: true
                         });
                         return null;
                     }
                 });
 
-                // this.setState({
-                //     userInput: true,
-                //     noMatchFound: false,
-                // });
+                this.setState({
+                    userInput: true,
+                    // noMatchFound: true,
+                });
 
                 console.log(locationBank);
-                this.inputEl.value = ''; // <- clear the input
+                this.inputEl.value = ''; // <- clear input field
 
             } else {
-                /* Create reference to locations in Firebase Database */
-                // let locationsRef = fire.database().ref('locations').orderByKey().limitToLast(150);
-                // locationsRef.on('child_added', snapshot => {
-                //     /* Update React state when location is added at Firebase Database */
-                //     let location = {
-                //         text: snapshot.val()
-                //     };
 
-                    const noMatchFoundMessage = 'Why'
-                    console.log(noMatchFoundMessage);
+                const noMatchFoundMessage = 'NO REGISTERED USERS IN THIS AREA';
+                console.log(noMatchFoundMessage);
 
-                    this.setState({
-                        location: noMatchFoundMessage,
-                        userInput: true,
-                        noMatchFound: true
-                    });
-                // });
+                this.setState({
+                    location: noMatchFoundMessage,
+                    userInput: true,
+                    // noMatchFound: true
+                });
 
                 this.createNeighbour(this.inputEl.value);
                 this.setState({
@@ -179,10 +174,10 @@ export class MainSearchForm extends React.Component {
                                         }}></figure>
                                         <div className="main__users--info">
                                             <p className="main__users--name">Name:
-                                                <span className="main__users--bold">{this.state.name} {this.state.lastName}</span>
+                                                <span className="main__users--bold"> {this.state.name} {this.state.lastName}</span>
                                             </p>
                                             <p className="main__users--location">Location:
-                                                <span className="main__users--bold">{this.state.location.toString()}</span>
+                                                <span className="main__users--bold"> {this.state.location.toString()}</span>
                                             </p>
                                         </div>
                                     </div>
@@ -209,15 +204,14 @@ export class MainSearchForm extends React.Component {
                         </div>
                     </div>
                 </div>
-                {/* <MapWithControlledZoom /> */}
                 <div id="map"></div>
                 <div id="infowindow-content">
                     <img src="" width="16" height="16" id="place-icon"/>
                     <span id="place-name" className="title"></span><br/>
                     <span id="place-address"></span>
                 </div>
-
-                {this.state.userInput&&this.state.noMatchFound ?
+                {
+                    this.state.noMatchFound ?
                     <section className="main__users">
                         <div className="container main__users--container">
                             <div className="row main__users--row">
@@ -227,7 +221,9 @@ export class MainSearchForm extends React.Component {
                             </div>
                         </div>
                     </section> :
-                <MainUsers/>
+
+                    <MainUsers/>
+
                 }
 
                 {/* <MainUsers/> */}

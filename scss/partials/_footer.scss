@@ -1,9 +1,6 @@
 .footer__container {
-    // height: 100px;
     background: $white;
-    // padding-top: 2em;
     position: relative;
-
 
     &--social {
         display: flex;
@@ -13,19 +10,15 @@
         padding-top: 2em;
 
         a {
-
             &:visited {
                 color: $medium-blue-primary;
             }
-
             &:hover {
                 color: $dark-blue-primary;
             }
-
             &:active {
                 color: $turquoise-secondary-main;
             }
-
         }
     }
 
@@ -34,19 +27,17 @@
         color: $neutral-grey;
         text-align: center;
         margin-top: 2em;
-        margin_bottom: 2em;
+        margin-bottom: 2em;
         padding-bottom: 1.2em;
+        
         a {
             color: $neutral-grey;
-
             &:visited {
                 color: $neutral-grey;
             }
-
             &:hover {
                 color: $medium-blue-primary;
             }
-
             &:active {
                 color: $turquoise-secondary-main;
             }

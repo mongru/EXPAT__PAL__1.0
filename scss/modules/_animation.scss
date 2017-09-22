@@ -1,21 +1,22 @@
 @import 'keyframes';
 
-@include keyframe(fadeout) {
+@include keyframe(shake) {
     0% {
-        opacity: 1;
+        transform: rotate(10deg);
     }
 
     100% {
-        opacity: 0;
+        transform-origin: center center;
+        transform: rotate(-10deg);
     }
 }
 
-@include keyframe(changecolour) {
-    0% {
-        color: #000;
+@include keyframe(pulse) {
+    25% {
+        transform: scale(0.9);
     }
 
-    100% {
-        color: #FFF;
+    75% {
+        transform: scale(1.1);
     }
 }

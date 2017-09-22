@@ -46,8 +46,8 @@ export class MainInfo extends React.Component {
         }
 
     componentDidMount() {
-        window.addEventListener('scroll', this.handleScrollText, false);
-        window.addEventListener('scroll', this.handleScrollStripe, false);
+        window.addEventListener('scroll', this.handleScrollText);
+        window.addEventListener('scroll', this.handleScrollStripe);
 
     }
 

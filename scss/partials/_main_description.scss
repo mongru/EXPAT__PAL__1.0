@@ -1,24 +1,22 @@
-.main__description--container {
-    position: relative;
-    // top: 100px;
-    // height: 700px;
-    background-color: $white;
-    overflow: hidden;
-    @include respond-to($tablet-portrait) {
-        // height: 900px;
-    }
-    @include respond-to($desktop) {
-        height: 900px;
+/* MAIN DESCRIPTION */
+.main__description {
+    &--container {
+        position: relative;
+        background-color: $white;
+        overflow: hidden;
+        @include respond-to($desktop) {
+            height: 900px;
+        }
     }
 
-    .main__description--title {
+    &--title {
         font-size: 20px;
         text-transform: uppercase;
-        padding: 3em 0  0 2em;
+        padding: 3em 0 0 2em;
         @include respond-to($tablet-portrait) {
             font-size: 20px;
             text-transform: uppercase;
-            padding: 3em 0  0 3em;
+            padding: 3em 0 0 3em;
         }
         @include respond-to($desktop) {
             margin-left: 60px;
@@ -49,11 +47,10 @@
         }
     }
 
-    .main__description--heading {
+    &--heading {
         font-family: 'itc_charter_blackitalic', serif;
         font-size: 24px;
         color: $black;
-        // margin-top: 100px;
         line-height: 1.6em;
         padding: 1.8em 0.2em 1em 1em;
         @include respond-to($desktop) {
@@ -63,10 +60,10 @@
         }
     }
 
-    .main__description--text {
+    &--text {
         font-size: 18px;
         line-height: 1.4em;
-        padding: 0.2em 2em 0 2em;
+        padding: 0.2em 2em 0;
         @include respond-to($desktop) {
             font-size: 24px;
             line-height: 1.2em;
@@ -74,179 +71,146 @@
         }
     }
 
-    .main__description--form {
+    &--form {
         margin-top: 3em;
-
         @include respond-to($tablet-portrait) {
             margin-top: 4em;
         }
-
         @include respond-to($desktop) {
             padding: 0.2em 2em 0 4em;
             margin: 4em 2em;
         }
+    }
 
-        .main__description--username, .main__description--password {
-            border: 1px solid $turquoise-secondary-light;
-            border-radius: 6px;
-            background-color: $neutral-grey;
-            display: block;
-            width: calc(100% - 4em);
-            margin: 2em;
-            padding: 1em;
+    &--password,
+    &--username {
+        border: 1px solid $turquoise-secondary-light;
+        border-radius: 6px;
+        background-color: $neutral-grey;
+        display: block;
+        width: calc(100% - 4em);
+        margin: 2em;
+        padding: 1em;
+        color: $dark-blue-primary;
+        font-family: $main-font;
+        font-size: 14px;
+        letter-spacing: 1px;
+        line-height: 1.2em;
+
+        &::placeholder {
             color: $dark-blue-primary;
             font-family: $main-font;
-            font-size: 14px;
-            letter-spacing: 1px;
-            line-height: 1.2em;
-            @include respond-to($tablet-portrait) {
-                width: 80%;
-                margin: 4em auto;
-            }
-            @include respond-to($desktop) {
-                width: 500px;
-            }
-
-            &::-webkit-input-placeholder {
-                color: $dark-blue-primary;
-                text-transform: uppercase;
-                font-family: $main-font;
-                font-size: 14px;
-                letter-spacing: 1px;
-                line-height: 1.2em;
-            }
-
-            &::-moz-placeholder {
-                color: $dark-blue-primary;
-                text-transform: uppercase;
-                font-family: $main-font;
-                font-size: 14px;
-                letter-spacing: 1px;
-                line-height: 1.2em;
-            }
-
-            &::-ms-input-placeholder {
-                color: $dark-blue-primary;
-                text-transform: uppercase;
-                font-family: $main-font;
-                font-size: 14px;
-                letter-spacing: 1px;
-                line-height: 1.2em;
-            }
+            text-transform: uppercase;
         }
+        @include respond-to($tablet-portrait) {
+            width: 80%;
+            margin: 4em auto;
+        }
+        @include respond-to($desktop) {
+            width: 500px;
+        }
+    }
 
-        .main__description--button {
+    &--button {
+        border: 2px solid $turquoise-secondary-main;
+        border-radius: 6px;
+        background-color: $medium-blue-primary;
+        width: 80%;
+        height: 40px;
+        color: $white;
+        font-family: $main-font;
+        font-size: 16px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin: 4em auto;
+        display: block;
+
+        &:focus {
+            outline: none;
+        }
+        @include respond-to($tablet-portrait) {
+            width: 40%;
+            margin: 4em auto;
+        }
+        @include respond-to($desktop) {
             border: 2px solid $turquoise-secondary-main;
             border-radius: 6px;
             background-color: $medium-blue-primary;
-            width: 80%;
+            width: 120px;
             height: 40px;
             color: $white;
             font-family: $main-font;
             font-size: 16px;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            margin: 4em auto;
-            display: block;
-            @include respond-to($tablet-portrait) {
-                width: 40%;
-                margin: 4em auto;
-            }
-            @include respond-to($desktop) {
-                border: 2px solid $turquoise-secondary-main;
-                border-radius: 6px;
-                background-color: $medium-blue-primary;
-                width: 120px;
-                height: 40px;
-                color: $white;
-                font-family: $main-font;
-                font-size: 16px;
-                letter-spacing: 0.2em;
-                text-transform: uppercase;
-                margin: 2em auto;
-            }
+            margin: 2em auto;
         }
     }
 
-    .main__description--image {
+    &--image {
         display: none;
         transform: rotate3d(-1, 1, 1, 20deg);
-        -webkit-transform: rotate3d(-1, 1, 1, 20deg);
         transform-origin: center center;
         transition: all 0.2s ease-in-out 4s;
-        -webkit-transform-origin: center center;
-        -webkit-transition: all 0.2s ease-in-out 4s;
-
         @include respond-to($desktop) {
             display: block;
             transform: rotate3d(-1, 1, 1, 20deg);
-            -webkit-transform: rotate3d(-1, 1, 1, 20deg);
             transform-origin: center center;
             transition: all 0.2s ease-in-out 4s;
-            -webkit-transform-origin: center center;
-            -webkit-transition: all 0.2s ease-in-out 4s;
-
         }
+    }
 
-        .main__description--device {
-            width: 500px;
-            position: relative;
-            top: 15em;
-            right: 10em;
-            // visibility: hidden;
-            display: none;
-
-            @include respond-to($desktop) {
+    &--device {
+        width: 500px;
+        position: relative;
+        top: 15em;
+        right: 10em;
+        display: none;
+        @include respond-to($desktop) {
             display: block;
-                &:hover {
-                    animation: shake 0.1s ease-in-out 0.1s infinite alternate;
-                }
-            }
-        }
 
-        .main__description--screen1, .main__description--screen2 {
-            width: 230px;
-            position: relative;
-            top: -18em;
-            right: 1.5em;
-
-        }
-
-        .main__description--screen1 {
-            z-index: 1;
-            // visibility: hidden;
-            display: none;
-
-            @include respond-to($desktop) {
-            // visibility: visible;
-            display: block;
-                &:hover {
-                    -webkit-animation: pulse 0.5s ease-in infinite;
-                }
-            }
-        }
-
-        .main__description--screen2 {
-            // visibility: hidden;
-            display: none;
-
-
-            @include respond-to($large-desktop) {
-                display: block;
-                position: relative;
-                right: -8em;
-                top: -696px;
-                // visibility: visible;
-                &:hover {
-                    -webkit-animation: pulse 0.5s ease-in infinite;
-                }
+            &:hover {
+                animation: shake 0.1s ease-in-out 0.1s infinite alternate;
             }
         }
     }
 
-    .main__description--dots {
-        display: none;
+    &--screen1,
+    &--screen2 {
+        width: 230px;
+        position: relative;
+        top: -18em;
+        right: 1.5em;
+    }
 
+    &--screen1 {
+        z-index: 1;
+        display: none;
+        @include respond-to($desktop) {
+            display: block;
+
+            &:hover {
+                animation: pulse 0.5s ease-in infinite;
+            }
+        }
+    }
+
+    &--screen2 {
+        display: none;
+        @include respond-to($large-desktop) {
+            display: block;
+            position: relative;
+            right: -8em;
+            top: -696px;
+
+            &:hover {
+                animation: pulse 0.5s ease-in infinite;
+            }
+        }
+    }
+
+    &--dots {
+        display: none;
         @include respond-to($desktop) {
             position: relative;
             display: flex;
@@ -267,7 +231,7 @@
         }
     }
 
-    .main__description--dot {
+    &--dot {
         width: 10px;
         height: 10px;
         background-color: $dark-blue-primary;
@@ -275,19 +239,22 @@
         border-radius: 50%;
     }
 }
-
-
 @keyframes shake {
- from {
-    transform: rotate(10deg);
- }
- to {
-   transform-origin: center center;
-   transform: rotate(-10deg);
- }
-}
+    from {
+        transform: rotate(10deg);
+    }
 
-@keyframes pulse{
-  25%  {transform: scale(0.9);}
-  75%  {transform: scale(1.1);}
+    to {
+        transform-origin: center center;
+        transform: rotate(-10deg);
+    }
+}
+@keyframes pulse {
+    25% {
+        transform: scale(0.9);
+    }
+
+    75% {
+        transform: scale(1.1);
+    }
 }

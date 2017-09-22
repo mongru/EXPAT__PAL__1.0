@@ -11,7 +11,6 @@ export const Footer = () => {
                     <div className="col-12">
                         <div className="footer__container--social">
                             <a href="https://github.com/mongru/EXPAT__PAL__1.0" target="_blank">
-                                {/* <i id="github" className="fa fa-github-square fa-2x" aria-hidden="true"></i> */}
                                  <FontAwesome name='github' size='2x'/>
                             </a>
                             <div className="footer__container--logo">

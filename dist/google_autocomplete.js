@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function(){
     //-------> Geolocation of device
     var options = {
     enableHighAccuracy: true,
-    timeout: 3000,
+    timeout: 5000,
     maximumAge: 0
     };
 
