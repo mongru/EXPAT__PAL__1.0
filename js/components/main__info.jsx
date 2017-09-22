@@ -3,20 +3,10 @@ import ReactDOM from 'react-dom';
 
 export class MainInfo extends React.Component {
 
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         transform: this.props.transform
-    //     };
-    // }
-
-
-    handleScrollText = (event) => {
-        // console.log(event);
-        const bodyHeight = document.body.clientHeight;
-        const windowHeight = window.innerHeight;
-        // const body = document.body;
-        const docScrollTop = window.pageYOffset;
+    handleScrollText = () => {
+        let bodyHeight = document.body.clientHeight;
+        let windowHeight = window.innerHeight;
+        let docScrollTop = window.pageYOffset;
 
         if(this.scrollText !== null) {
             if((docScrollTop + windowHeight / 8) > bodyHeight / 8) {
@@ -32,14 +22,10 @@ export class MainInfo extends React.Component {
             }
         }
 
-
-    handleScrollStripe = (event) => {
-
-        const bodyHeight = document.body.clientHeight;
-        const windowHeight = window.innerHeight;
-        const docScrollTop = window.pageYOffset;
-
-
+    handleScrollStripe = () => {
+        let bodyHeight = document.body.clientHeight;
+        let windowHeight = window.innerHeight;
+        let docScrollTop = window.pageYOffset;
         // console.log(bodyHeight);
         // console.log(windowHeight);
         // console.log(docScrollTop);
@@ -60,8 +46,8 @@ export class MainInfo extends React.Component {
         }
 
     componentDidMount() {
-        window.addEventListener('scroll', this.handleScrollText);
-        window.addEventListener('scroll', this.handleScrollStripe);
+        window.addEventListener('scroll', this.handleScrollText, false);
+        window.addEventListener('scroll', this.handleScrollStripe, false);
 
     }
 
@@ -70,30 +56,25 @@ export class MainInfo extends React.Component {
         window.removeEventListener('scroll', this.handleScrollStripe);
     }
 
-    render(){
-
+    render() {
         return (
-
-            <main>
-                <section className="main">
-                    <div className="container main__info">
-                        <div className="row">
-                            <div className="col-12 main__info--banner">
-                                <h1 ref={(ref) => this.scrollText = ref}>
-                                    Pay it forward <br/>
-                                    expat community
-                                </h1>
-                                <p>
-                                    Meet like-minded people in your new area willing to share their knowledge, struggles and experience
-                                </p>
-                            </div>
-
+            <section className="main">
+                <div className="container main__info">
+                    <div className="row">
+                        <div className="col-12 main__info--banner">
+                            <h1 ref={(ref) => this.scrollText = ref}>
+                                Pay it forward <br/>
+                                expat community
+                            </h1>
+                            <p>
+                                Meet like-minded people in your new area willing to share their knowledge, struggles and experience
+                            </p>
                         </div>
-                        <div ref={(ref) => this.scrollStripe = ref} className="main__info--stripe"></div>
-                        <div className="main__info--circle"></div>
                     </div>
-                </section>
-            </main>
+                    <div ref={(ref) => this.scrollStripe = ref} className="main__info--stripe"></div>
+                    <div className="main__info--circle"></div>
+                </div>
+            </section>
         );
     }
 }

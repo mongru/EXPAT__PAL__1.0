@@ -1,28 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute } from 'react-router';
 
-import {Header} from './header.jsx';
-import {MainInfo} from './main__info.jsx';
-import {MainDescription} from './main__description.jsx';
-import {MainSearchForm} from './main__searchform.jsx';
-import {MainUsers} from './main__users.jsx';
-import {ContactForm} from './contact__form.jsx';
-import {Footer} from './footer.jsx';
+// -------> COMPONENTS
+import { Header } from './header.jsx';
+import { MainInfo } from './main__info.jsx';
+import { MainDescription } from './main__description.jsx';
+import { MainSearchForm } from './main__searchform.jsx';
+import { MainUsers } from './main__users.jsx';
+import { ContactForm } from './contact__form.jsx';
+import { Footer } from './footer.jsx';
 
-export class Template extends React.Component {
-  render(){
+
+export const Template = () => {
     return (
         <div className="container__wrapper">
             <Header />
-            <MainInfo />
-            <MainDescription />
-            <MainSearchForm />
-            {/* <MainUsers /> */}
-            <ContactForm />
+            <main>
+                <MainInfo />
+                <MainDescription />
+                <MainSearchForm />
+                {/* <MainUsers /> */}
+                <ContactForm />
+            </main>
             <Footer />
         </div>
 
     )
-  }
 }

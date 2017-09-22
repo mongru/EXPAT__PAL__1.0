@@ -2,15 +2,18 @@
 
 Landing page for the EXPAT__PAL__1.0 app - **currently in build**.
 
+## Demo
+[Click here](https://mongru.github.io/EXPAT__PAL__1.0/)
+
 ## Motivation
 
 EXPAT__PAL__1.0 is an app for people who recently moved to a foreign country and look for friendship/help. The aim is to create a supportive community inspired by the "pay it forward" philosophy of life.
 
 ### Installing
 
-For local changes and edits clone and download this repo.
+For local changes and edits clone or download this repo.
 
-Then run:
+Then 'cd EXPAT__PAL__1.0' and run:
 
 ```
 npm install
@@ -19,10 +22,10 @@ npm install
 and:
 
 ```
-npm start
+npm start & navigate to http://localhost:8080/
 ```
 
-& have fun editing!
+Have fun editing!
 
 ## Built With
 
@@ -55,6 +58,3 @@ npm start
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
-
-## Demo
-[Click here](https://mongru.github.io/EXPAT__PAL__1.0/)

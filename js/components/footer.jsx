@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-export class Footer extends React.Component {
-  render(){
+import FontAwesome from 'react-fontawesome';
+
+export const Footer = () => {
     return (
         <footer>
             <div className="footer__container container">
@@ -10,7 +11,8 @@ export class Footer extends React.Component {
                     <div className="col-12">
                         <div className="footer__container--social">
                             <a href="https://github.com/mongru/EXPAT__PAL__1.0" target="_blank">
-                                <i id="github" className="fa fa-github-square fa-2x" aria-hidden="true"></i>
+                                {/* <i id="github" className="fa fa-github-square fa-2x" aria-hidden="true"></i> */}
+                                 <FontAwesome name='github' size='2x'/>
                             </a>
                             <div className="footer__container--logo">
                                 <a href="#">
@@ -27,5 +29,4 @@ export class Footer extends React.Component {
             </div>
         </footer>
     );
-  }
 }

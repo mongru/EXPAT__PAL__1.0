@@ -7,6 +7,7 @@ export class ContactForm extends React.Component {
 
     handleMessage = (e) => {
         e.preventDefault();
+
         if(this.inputName.value.length>4&&this.inputEmail.value.length>8&&this.inputMessage.value.length>8) {
             const contactForm = {
                 name: this.inputName.value,
@@ -15,9 +16,9 @@ export class ContactForm extends React.Component {
             }
 
             const newContactForm = fire.database().ref('contact').push(contactForm);
-
-            console.log("added to firebase");
+            // console.log("added to firebase");
             alert('Thank you for your message! We will get back to you shortly')
+            // clear input fields after successful submission
             this.inputName.value = '';
             this.inputEmail.value = '';
             this.inputMessage.value = '';
@@ -27,8 +28,7 @@ export class ContactForm extends React.Component {
         }
     }
 
-    render(){
-
+    render() {
         return (
             <section className="contact">
                 <div className="container contact__container">

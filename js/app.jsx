@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import '../scss/main.scss';
-import {Template} from './components/template.jsx';
+
+// -------> COMPONENTS
+import { Template } from './components/template.jsx';
 
 class App extends React.Component {
 

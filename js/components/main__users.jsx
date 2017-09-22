@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import {MainSearchForm} from './main__searchform.jsx';
-
 import fire from '../fire';
 import users from '../../expatpal-cd11e-export.json';
+
+// -------> COMPONENTS
+import { MainSearchForm } from './main__searchform.jsx';
 
 
 export class MainUser extends React.Component {
@@ -15,8 +16,7 @@ export class MainUser extends React.Component {
             lastName: "",
             avatar: "",
             error: false,
-            userInput: false,
-            location: this.props.location
+            userInput: false
         }
     }
 
@@ -36,9 +36,7 @@ export class MainUser extends React.Component {
             .then(this.handleErrors)
             .then(res => res.json()
             .then(res => {
-                console.log(res);
-                // console.log(res.results[0].name.first, res.results[0].name.last, res.results[0].location.city, res.results[0].location.street, res.results[0].picture.large);
-
+                // console.log(res);
                 const firstName = res.results[0].name.first;
                 const lastName = res.results[0].name.last;
                 const avatar = res.results[0].picture.large;
@@ -56,7 +54,7 @@ export class MainUser extends React.Component {
                     .then(this.handleErrors)
                     .then(res => res.json()
                     .then(res => {
-                        console.log(res.results[0].formatted_address);
+                        // console.log(res.results[0].formatted_address);
                         const formattedAddress = res.results[0].formatted_address;
                         randomUserProfile.location = formattedAddress;
                         fire.database().ref('random_user').push(randomUserProfile);
@@ -103,17 +101,6 @@ export class MainUser extends React.Component {
         })
     }
 
-    // componentWillReceiveProps(nextProps) {
-    //     this.setState({
-    //         userInput: false
-    //     })
-    // }
-
-    // componentDidUpdate() {
-    //     if(this.state.userInput === true) {
-    //         this.createNeighbour();
-    //     }
-    // }
 
     componentDidMount() {
 
@@ -139,12 +126,6 @@ export class MainUser extends React.Component {
 }
 
 export class MainUsers extends React.Component {
-    constructor(props){
-        super(props);
-        this.state={
-            userInput: this.props.userInput
-        }
-    }
 
     render(){
         return (
