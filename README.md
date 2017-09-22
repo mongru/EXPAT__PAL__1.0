@@ -13,7 +13,16 @@ EXPAT__PAL__1.0 is an app for people who recently moved to a foreign country and
 
 For local changes and edits clone or download this repo.
 
-Then 'cd EXPAT__PAL__1.0' and run:
+```
+'git clone https://github.com/mongru/EXPAT__PAL__1.0.git'
+```
+
+Then
+```
+'cd EXPAT__PAL__1.0'
+```
+
+run:
 
 ```
 npm install

@@ -14,7 +14,7 @@ export class MainSearchForm extends React.Component {
         this.state = {
             location: [],
             userInput: false,
-            noMatchFound: true
+            noMatchFound: ''
         };
     }
 
@@ -51,52 +51,77 @@ export class MainSearchForm extends React.Component {
         this.setState({name: randomName, lastName: randomLastName, avatar: randomAvatar, location: location, userInput: true});
     }
 
+    noMatchFound = () => {
+        <p>Sorry, we haven't found anyone registered in this area. Please try another place nearby.</p>
+    }
+
     addLocation = (e) => {
         e.preventDefault(); // <- prevent form submit from reloading the page
         let locationBank = [];
         // this.createNeighbour();
         /* Send the location to Firebase */
         if (this.inputEl.value.length > 3) {
-            fire.database().ref('locations').push(this.inputEl.value);
-            console.log('location added to database');
+            // fire.database().ref('locations').push(this.inputEl.value);
+            // console.log('location added to database');
 
             if(Array.isArray(this.state.location)) {
+
+                fire.database().ref('locations').push(this.inputEl.value);
+                console.log('location added to database');
 
                 this.state.location.map((city) => {
                     // console.log(city.text);
                     if (city.text === this.inputEl.value) {
                         locationBank.push(city.text);
+
+                        this.setState({
+                            userInput: true,
+                            noMatchFound: false
+                        });
+
                         this.createNeighbour(city.text);
 
                     } else {
                         console.log('no match found');
+                        this.setState({
+                            userInput: true,
+                            noMatchFound: true
+                        });
                         return null;
                     }
                 });
 
-                this.setState({
-                    userInput: true,
-                    noMatchFound: false
-                });
+                // this.setState({
+                //     userInput: true,
+                //     noMatchFound: false,
+                // });
 
                 console.log(locationBank);
                 this.inputEl.value = ''; // <- clear the input
 
             } else {
                 /* Create reference to locations in Firebase Database */
-                let locationsRef = fire.database().ref('locations').orderByKey().limitToLast(100);
-                locationsRef.on('child_added', snapshot => {
-                    /* Update React state when location is added at Firebase Database */
-                    let location = {
-                        text: snapshot.val()
-                    };
+                // let locationsRef = fire.database().ref('locations').orderByKey().limitToLast(150);
+                // locationsRef.on('child_added', snapshot => {
+                //     /* Update React state when location is added at Firebase Database */
+                //     let location = {
+                //         text: snapshot.val()
+                //     };
+
+                    const noMatchFoundMessage = 'Why'
+                    console.log(noMatchFoundMessage);
+
                     this.setState({
-                        location: [location].concat(this.state.location),
+                        location: noMatchFoundMessage,
+                        userInput: true,
                         noMatchFound: true
                     });
-                });
+                // });
 
                 this.createNeighbour(this.inputEl.value);
+                this.setState({
+                    noMatchFound: false
+                });
                 this.inputEl.value = '';
             }
 
@@ -118,6 +143,7 @@ export class MainSearchForm extends React.Component {
         // let neighbours;
         // TODO find a better solution for rendering neighbours
         // TODO use Google Maps for React
+
 
         if (this.state.userInput&&!this.state.noMatchFound) {
             return (
@@ -191,7 +217,20 @@ export class MainSearchForm extends React.Component {
                     <span id="place-address"></span>
                 </div>
 
+                {this.state.userInput&&this.state.noMatchFound ?
+                    <section className="main__users">
+                        <div className="container main__users--container">
+                            <div className="row main__users--row">
+                                <div className="col-12 main__users--profilebox turquoise">
+                                    <p>Sorry, we haven't found anyone registered in this area. Please try another place nearby.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section> :
                 <MainUsers/>
+                }
+
+                {/* <MainUsers/> */}
 
             </section>
         );
