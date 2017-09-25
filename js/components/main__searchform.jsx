@@ -216,8 +216,9 @@ export class MainSearchForm extends React.Component {
                             <div className="container main__users--container">
                                 <div className="row main__users--row">
                                     <div className="col-12 main__users--profilebox turquoise">
+                                        <p className="main__searchform--alert">Your match:</p>
                                         <div>
-                                            <figure className="main__users--avatar" style={{
+                                            <figure className="main__users--avatar match-found" style={{
                                                 backgroundImage: `url(${this.state.avatar})`
                                             }}></figure>
                                             <div className="main__users--info">
@@ -241,7 +242,7 @@ export class MainSearchForm extends React.Component {
                         <div className="container main__users--container">
                             <div className="row main__users--row">
                                 <div className="col-12 main__users--profilebox turquoise">
-                                    <p>Sorry, we haven't found anyone registered in this area. Please try another place nearby.</p>
+                                    <p className="main__searchform--alert">Sorry, we haven't found anyone registered in this area. Please try another place nearby.</p>
                                 </div>
                             </div>
                         </div>
