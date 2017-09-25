@@ -8,7 +8,8 @@ export class MainDescription extends React.Component {
     constructor(props){
         super(props);
         this.state=({
-            loggedIn: false
+            loggedIn: false,
+            formOk: true
         });
     }
 
@@ -26,20 +27,21 @@ export class MainDescription extends React.Component {
             this.inputName.value = '';
             this.inputPass.value = '';
             this.setState({
-                loggedIn: true
+                loggedIn: true,
+                formOk: true
             });
-            alert('Thank you for creating your account! Your details have been added to our database')
+            // alert('Thank you for creating your account! Your details have been added to our database')
         } else {
-            alert('Your username must be at least 4 letters long. Your password must have at least 8 characters. ')
+            this.setState({
+                formOk: false
+            });
+            // alert('Your username must be at least 4 letters long. Your password must have at least 8 characters. ')
         }
     }
 
     render(){
 
-        let loginMessage = 'Thank you for creating your account! Your details have been added to our database';
-        if(this.state.loggedIn === true) {
-            loginMessage = <div>{loginMessage}</div>;
-        }
+        const loginMessage = 'Thank you for logging in! Your details have been added to our database';
 
         return (
             <section id="main__description" className="main__description">
@@ -60,10 +62,20 @@ export class MainDescription extends React.Component {
 
                             <form onSubmit={(e) => this.handleLogin(e)} className="main__description--form">
                                 <input className="main__description--username" type="text" name="username" placeholder="username" ref={ el => this.inputName = el }></input>
+                                {
+                                    !this.state.formOk ? <p className="main__description--alert">Your username must be at least 4 letters long.</p> : ''
+                                }
                                 <input className="main__description--password" type="password" name="password" placeholder="password" ref={ el => this.inputPass = el }></input>
+                                {
+                                    !this.state.formOk ? <p className="main__description--alert">Your password must have at least 8 characters</p> : ''
+                                }
                                 <button onClick={(e) => this.handleLogin(e)} className="main__description--button">Login</button>
                                 <div style={{display:"none"}}>{loginMessage}</div>
+                                {
+                                    this.state.loggedIn ? <p className="main__description--alert user">{loginMessage} We are currently working on your profile page. Please come back soon.</p> : ''
+                                }
                             </form>
+
 
                         </div>
                         <div className="col-5">

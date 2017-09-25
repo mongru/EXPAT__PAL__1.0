@@ -176,7 +176,7 @@
     @include respond-to($desktop) {
         height: 260px;
         top: 30%;
-        transform: scaleX(1.2) scaleY(13);
+        transform: scaleX(1.2) scaleY(14);
         // transition-duration: 2s;
     }
     @include respond-to($large-desktop) {

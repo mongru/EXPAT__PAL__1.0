@@ -14,6 +14,7 @@
     &--form {
         display: flex;
         justify-content: center;
+        align-items: center;
         width: 100%;
         @include respond-to($desktop) {
             justify-content: flex-end;
@@ -33,26 +34,30 @@
             margin-left: 60px;
         }
     }
+}
 
-    .contact__form--input,
-    .contact__form--message,
-    .contact__form--submitBtn {
+.contact__form {
+    &--input,
+    &--message,
+    &--submitBtn {
         display: block;
-        width: 320px;
+        width: 90%;
         height: 50px;
-        margin: 3em 0;
+        margin: 2em auto;
         background-color: $neutral-grey;
         border-style: none;
         color: $black;
         font-family: $main-font;
-        padding-left: 20px;;
+        padding-left: 20px;
         font-size: 16px;
         line-height: 20px;
 
+        &:focus {
+            outline-color: $turquoise-secondary-main;
+        }
         @include respond-to($tablet-portrait) {
             width: 480px;
         }
-
         @include respond-to($desktop) {
             display: block;
             width: 500px;
@@ -63,18 +68,29 @@
         }
     }
 
-    .contact__form--message {
+    &--message {
         height: 200px;
         resize: none;
     }
 
-    .contact__form--submitBtn {
+    &--submitBtn {
         background-color: $dark-blue-primary;
+        margin: auto;
         color: $white;
         text-transform: uppercase;
         border: none;
         font-family: $main-font;
         font-size: 16px;
         letter-spacing: 0.1em;
+        @include respond-to($desktop) {
+            width: calc(100% - 2px);
+        }
+    }
+
+    &--alert {
+        font-size: 14px;
+        color: $dark-blue-primary;
+        margin: 0 auto;
+        padding: 2em;
     }
 }
