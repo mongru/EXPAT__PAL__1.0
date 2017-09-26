@@ -77,7 +77,7 @@ export class MainSearchForm extends React.Component {
                         this.createNeighbour(city.text);
 
                     } else {
-                        console.log('no match found');
+                        // console.log('no match found');
                         this.setState({
                             // userInput: true,
                             noMatchFound: true,
@@ -98,8 +98,8 @@ export class MainSearchForm extends React.Component {
 
             } else {
 
-                const noMatchFoundMessage = 'NO REGISTERED USERS IN THIS AREA';
-                console.log(noMatchFoundMessage);
+                // const noMatchFoundMessage = 'NO REGISTERED USERS IN THIS AREA';
+                // console.log(noMatchFoundMessage);
 
                 this.setState({
                     location: noMatchFoundMessage,

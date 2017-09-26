@@ -5,6 +5,8 @@ Landing page for the EXPAT__PAL__1.0 app - **currently in build**.
 ## Demo
 [Click here](https://mongru.github.io/EXPAT__PAL__1.0/)
 
+![Mobile view](/screenshots/mobile_welcome_screen.jpg?raw=true)
+
 ## Motivation
 
 EXPAT__PAL__1.0 is an app for people who recently moved to a foreign country and look for friendship/help. The aim is to create a supportive community inspired by the "pay it forward" philosophy of life.
