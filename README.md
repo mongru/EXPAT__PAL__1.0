@@ -5,8 +5,7 @@ Landing page for the EXPAT__PAL__1.0 app - **currently in build**.
 ## Demo
 [Click here](https://mongru.github.io/EXPAT__PAL__1.0/)
 
-![Mobile view](/screenshots/mobile_welcome_screen.jpg?raw=true) ![Mobile view](/screenshots/mobile_menu.jpg?raw=true) ![Mobile view](/screenshots/mobile_login.jpg?raw=true)  ![Mobile view](/screenshots/mobile_user.jpg?raw=true)  ![Mobile view](/screenshots/tablet_users.jpg?raw=true)  ![Mobile view](/screenshots/match_found_tablet.jpg?raw=true)
-![Desktop view](/screenshots/desktop_welcome.jpg?raw=true)  ![Desktop view](/screenshots/desktop_login.jpg?raw=true) ![Desktop view](/screenshots/desktop_search.jpg?raw=true)  ![Desktop view](/screenshots/desktop_users.jpg?raw=true)
+![Preview](/screenshots/mockup.jpg?raw=true)
 
 ## Motivation
 
