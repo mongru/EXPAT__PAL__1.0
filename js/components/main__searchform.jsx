@@ -102,7 +102,7 @@ export class MainSearchForm extends React.Component {
                 // console.log(noMatchFoundMessage);
 
                 this.setState({
-                    location: noMatchFoundMessage,
+                    // location: noMatchFoundMessage,
                     userInput: true,
                     formNotOk: false
                     // noMatchFound: true
