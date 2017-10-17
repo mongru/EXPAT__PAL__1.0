@@ -40,13 +40,13 @@ export class NavMobile extends React.Component {
                 </span>
                 <nav style={styleObjUl} className="nav__mobile">
                     <ul className="nav__mobile__menu">
-                        <li key={1} className="nav__mobile__menu--item">
+                        <li key={1} className="nav__mobile__menu--item" onClick={this.handleClick}>
                             <a href="#main__searchform" className="nav__mobile__menu--link">How it works</a>
                         </li>
-                        <li key={2} className="nav__mobile__menu--item">
+                        <li key={2} className="nav__mobile__menu--item" onClick={this.handleClick}>
                             <a href="#main__description" className="nav__mobile__menu--link">Log in</a>
                         </li>
-                        <li key={3} className="nav__mobile__menu--item">
+                        <li key={3} className="nav__mobile__menu--item" onClick={this.handleClick}>
                             <a href="#" className="nav__mobile__menu--link">Sign up</a>
                         </li>
                     </ul>
