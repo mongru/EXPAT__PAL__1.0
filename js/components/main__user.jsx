@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 
 import fire from '../fire';
 
+// -------> COMPONENTS
+import { Spinner } from './spinner.jsx';
+
 export class MainUser extends React.Component {
     constructor(props){
         super(props);
@@ -10,7 +13,8 @@ export class MainUser extends React.Component {
             name: "",
             lastName: "",
             avatar: "",
-            error: false
+            error: false,
+            dataReady: false
         }
     }
 
@@ -57,7 +61,8 @@ export class MainUser extends React.Component {
                     this.setState({
                         name: res.results[0].name.first,
                         lastName: res.results[0].name.last,
-                        avatar: res.results[0].picture.large
+                        avatar: res.results[0].picture.large,
+                        dataReady: true
                     });
                 }) )
             .catch((err) => {
@@ -73,16 +78,23 @@ export class MainUser extends React.Component {
     }
 
     render() {
-        const { name, lastName, avatar, location } = this.state;
+        const { name, lastName, avatar, location, dataReady } = this.state;
 
         return (
             <div>
-                <figure className="main__users--avatar" style={{backgroundImage: `url(${avatar})`}}>
-                </figure>
-                <div className="main__users--info">
-                    <p className="main__users--name">Name: <span className="main__users--bold">{name} {lastName}</span></p>
-                    <p className="main__users--location">Location: <span className="main__users--bold">{location}</span></p>
-                </div>
+                {
+                    dataReady
+                    ?
+                    <div>
+                        <figure className="main__users--avatar" style={{backgroundImage: `url(${avatar})`}}>
+                        </figure>
+                        <div className="main__users--info">
+                            <p className="main__users--name">Name: <span className="main__users--bold">{name} {lastName}</span></p>
+                            <p className="main__users--location">Location: <span className="main__users--bold">{location}</span></p>
+                        </div>
+                    </div>
+                    : <Spinner />
+                }
             </div>
         );
     }

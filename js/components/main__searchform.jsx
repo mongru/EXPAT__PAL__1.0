@@ -7,6 +7,7 @@ import users from '../../expatpal-cd11e-export.json';
 // -------> COMPONENTS
 import { MainUser } from './main__user.jsx';
 import { MainUsers } from './main__users.jsx';
+import { Spinner } from './spinner.jsx';
 
 export class MainSearchForm extends React.Component {
     constructor(props) {
@@ -14,7 +15,7 @@ export class MainSearchForm extends React.Component {
         this.state = {
             location: [],
             userInput: false,
-            noMatchFound: '',
+            noMatchFound: false,
             formNotOk: false
         };
     }
@@ -212,7 +213,8 @@ export class MainSearchForm extends React.Component {
                 </div>
 
                 {
-                    this.state.userInput&&!this.state.noMatchFound ? (<section className="main__users">
+                    this.state.userInput&&!this.state.noMatchFound&&!this.state.formNotOk
+                    ? (<section className="main__users">
                             <div className="container main__users--container">
                                 <div className="row main__users--row">
                                     <div className="col-12 main__users--profilebox turquoise">
@@ -233,7 +235,8 @@ export class MainSearchForm extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                        </section>) : ''
+                        </section>)
+                        : ''
                 }
 
                 {
@@ -247,11 +250,10 @@ export class MainSearchForm extends React.Component {
                             </div>
                         </div>
                     </section> :
-
-                    <MainUsers />
-
+                    ''
                 }
 
+                <MainUsers />
             </section>
         );
     }
