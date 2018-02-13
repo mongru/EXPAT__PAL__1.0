@@ -8,19 +8,19 @@ export class MainInfo extends React.Component {
         let windowHeight = window.innerHeight;
         let docScrollTop = window.pageYOffset;
 
-        if(this.scrollText !== null) {
-            if((docScrollTop + windowHeight / 8) > bodyHeight / 8) {
-                    this.scrollText.classList.add('text-beforeScroll');
-                    this.scrollText.classList.remove('text-afterScroll');
+        if (this.scrollText !== null) {
+            if ((docScrollTop + windowHeight / 8) > bodyHeight / 8) {
+                this.scrollText.classList.add('text-beforeScroll');
+                this.scrollText.classList.remove('text-afterScroll');
 
-                    // console.log("Scroll works");
-                    // console.log(this.scrollText.className);
-                } else {
-                    this.scrollText.classList.add('text-afterScroll');
-                    this.scrollText.classList.remove('text-beforeScroll');
-                }
+                // console.log("Scroll works");
+                // console.log(this.scrollText.className);
+            } else {
+                this.scrollText.classList.add('text-afterScroll');
+                this.scrollText.classList.remove('text-beforeScroll');
             }
         }
+    }
 
     handleScrollStripe = () => {
         let bodyHeight = document.body.clientHeight;
@@ -31,19 +31,18 @@ export class MainInfo extends React.Component {
         // console.log(docScrollTop);
         // console.log(this.scrollStripe);
 
-
-        if(this.scrollStripe !== null) {
-            if((docScrollTop + windowHeight / 2) > bodyHeight / 2) {
-                    this.scrollStripe.classList.add('stripe-beforeScroll');
-                    this.scrollStripe.classList.remove('stripe-afterScroll');
-                    // console.log("Scroll works");
-                    // console.log(this.scrollStripe.className);
-                } else {
-                    this.scrollStripe.classList.add('stripe-afterScroll');
-                    this.scrollStripe.classList.remove('stripe-beforeScroll');
-                }
+        if (this.scrollStripe !== null) {
+            if ((docScrollTop + windowHeight / 2) > bodyHeight / 2) {
+                this.scrollStripe.classList.add('stripe-beforeScroll');
+                this.scrollStripe.classList.remove('stripe-afterScroll');
+                // console.log("Scroll works");
+                // console.log(this.scrollStripe.className);
+            } else {
+                this.scrollStripe.classList.add('stripe-afterScroll');
+                this.scrollStripe.classList.remove('stripe-beforeScroll');
             }
         }
+    }
 
     componentDidMount() {
         window.addEventListener('scroll', this.handleScrollText);
@@ -63,7 +62,8 @@ export class MainInfo extends React.Component {
                     <div className="row">
                         <div className="col-12 main__info--banner">
                             <h1 ref={(ref) => this.scrollText = ref}>
-                                Pay it forward <br/>
+                                Pay it forward
+                                <br/>
                                 expat community
                             </h1>
                             <p>

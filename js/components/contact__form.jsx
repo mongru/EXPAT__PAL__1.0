@@ -11,7 +11,7 @@ export class ContactForm extends React.Component {
         }
     }
 
-    handleMessage = (e) => {
+    handleMessage(e) {
         e.preventDefault();
 
         if(this.inputName.value.length>4&&this.inputEmail.value.length>8&&this.inputMessage.value.length>8) {

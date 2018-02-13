@@ -43,7 +43,7 @@ export class Nav extends React.Component {
     }
 
     renderNavigation() {
-        if(this.state.windowWidth <= 768) {
+        if(this.state.windowWidth < 769) {
             return (
                 <NavMobile mobileNavVisible={this.state.mobileNavVisible}/>
             );

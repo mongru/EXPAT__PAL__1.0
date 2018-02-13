@@ -13,7 +13,7 @@ export class MainDescription extends React.Component {
         });
     }
 
-    handleLogin = (e) => {
+    handleLogin(e) {
         e.preventDefault();
         if(this.inputName.value.length>4&&this.inputPass.value.length>8) {
 
@@ -37,6 +37,19 @@ export class MainDescription extends React.Component {
             });
             // alert('Your username must be at least 4 letters long. Your password must have at least 8 characters. ')
         }
+    }
+
+    handleSliderClick(e) {
+        e.preventDefault();
+        const dots = document.querySelectorAll(".main__description--dot");
+        console.log(dots);
+        console.log(e);
+        // dots.forEach(dot => {
+        //     console.log(dot);
+        //     if(!dot.classList.contains("active")) {
+        //         dot.classList.add("active");
+        //     }
+        // });
     }
 
     render(){
@@ -80,14 +93,14 @@ export class MainDescription extends React.Component {
                         </div>
                         <div className="col-5">
                             <figure className="main__description--image">
-                                <img className="main__description--device" src="./assets/Device_small.png" alt="device snapshot" />
-                                <img className="main__description--screen1" src="./assets/Login__screen.jpg" alt="login screen snapshot" />
-                                <img className="main__description--screen2" src="./assets/Profile__screen.jpg" alt="profile screen snapshot" />
+                                <img className="main__description--device" src="./assets/Device_small.png" alt="device snapshot" data="1" />
+                                <img className="main__description--screen1" src="./assets/Login__screen.jpg" alt="login screen snapshot" data="2" />
+                                <img className="main__description--screen2" src="./assets/Profile__screen.jpg" alt="profile screen snapshot" data="3" />
                             </figure>
                             <div className="main__description--dots">
-                                <div className="main__description--dot"></div>
-                                <div className="main__description--dot"></div>
-                                <div className="main__description--dot"></div>
+                                <div className="main__description--dot" data="1" onClick={(e) => this.handleSliderClick(e)}></div>
+                                <div className="main__description--dot" data="2"></div>
+                                <div className="main__description--dot" data="3"></div>
                             </div>
                         </div>
                     </div>

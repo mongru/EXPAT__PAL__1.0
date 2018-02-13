@@ -251,6 +251,10 @@
     padding: 0 2em 2em 2em;
 }
 
+.active {
+    background-color: $turquoise-secondary-main;
+}
+
 @keyframes shake {
     from {
         transform: rotate(10deg);
