@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import fire from '../fire';
 
-export class ContactForm extends React.Component {
+class ContactForm extends React.Component {
     constructor(props)  {
         super(props);
         this.state = {
@@ -72,3 +72,6 @@ export class ContactForm extends React.Component {
         );
     }
 }
+
+
+export default ContactForm;

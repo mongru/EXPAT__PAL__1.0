@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom';
 
-export class NavMobile extends React.Component {
+class NavMobile extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -44,10 +45,12 @@ export class NavMobile extends React.Component {
                             <a href="#main__searchform" className="nav__mobile__menu--link">How it works</a>
                         </li>
                         <li key={2} className="nav__mobile__menu--item" onClick={this.handleClick}>
-                            <a href="#main__description" className="nav__mobile__menu--link">Log in</a>
+                            {/* <a href="#main__description" className="nav__mobile__menu--link">Log in</a> */}
+                            <Link to={'/signin'}>Log in</Link>
                         </li>
                         <li key={3} className="nav__mobile__menu--item" onClick={this.handleClick}>
-                            <a href="#" className="nav__mobile__menu--link">Sign up</a>
+                            {/* <a href="#" className="nav__mobile__menu--link">Sign up</a> */}
+                            <Link to={'/signup'}>Sign up</Link>
                         </li>
                     </ul>
                     <div className="active" onClick={this.handleClick}>
@@ -58,3 +61,5 @@ export class NavMobile extends React.Component {
         );
     }
 }
+
+export default NavMobile;

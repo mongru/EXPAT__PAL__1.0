@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // -------> COMPONENTS
-import { Nav } from './nav.jsx';
+import Nav from './nav.js';
 
 
-export const Header = () => {
+const Header = () => {
     return (
         <header>
             <div className="menu">
@@ -25,3 +25,5 @@ export const Header = () => {
         </header>
     );
 }
+
+export default Header;

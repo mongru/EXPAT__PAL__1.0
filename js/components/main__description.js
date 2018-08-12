@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import fire from '../fire';
 
-export class MainDescription extends React.Component {
+class MainDescription extends React.Component {
 
     constructor(props){
         super(props);
@@ -109,3 +109,5 @@ export class MainDescription extends React.Component {
         );
     }
 }
+
+export default MainDescription;

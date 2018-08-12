@@ -4,9 +4,9 @@ import ReactDOM from 'react-dom';
 import fire from '../fire';
 
 // -------> COMPONENTS
-import { Spinner } from './spinner.jsx';
+import Spinner from './spinner.js';
 
-export class MainUser extends React.Component {
+class MainUser extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -99,3 +99,6 @@ export class MainUser extends React.Component {
         );
     }
 }
+
+
+export default MainUser;

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import FontAwesome from 'react-fontawesome';
 
-export const Footer = () => {
+const Footer = () => {
     return (
         <footer>
             <div className="footer__container container">
@@ -29,3 +29,5 @@ export const Footer = () => {
         </footer>
     );
 }
+
+export default Footer;

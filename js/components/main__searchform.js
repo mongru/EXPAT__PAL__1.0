@@ -5,11 +5,11 @@ import fire from '../fire';
 import users from '../../expatpal-cd11e-export.json';
 
 // -------> COMPONENTS
-import { MainUser } from './main__user.jsx';
-import { MainUsers } from './main__users.jsx';
-import { Spinner } from './spinner.jsx';
+import MainUser from './main__user.js';
+import MainUsers from './main__users.js';
+import Spinner from './spinner.js';
 
-export class MainSearchForm extends React.Component {
+class MainSearchForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -258,3 +258,6 @@ export class MainSearchForm extends React.Component {
         );
     }
 }
+
+
+export default MainSearchForm;

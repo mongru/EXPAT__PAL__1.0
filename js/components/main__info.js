@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-export class MainInfo extends React.Component {
+class MainInfo extends React.Component {
 
     handleScrollText = () => {
         let bodyHeight = document.body.clientHeight;
@@ -78,3 +78,5 @@ export class MainInfo extends React.Component {
         );
     }
 }
+
+export default MainInfo;

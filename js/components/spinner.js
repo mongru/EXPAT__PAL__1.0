@@ -2,8 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 
-export const Spinner = () =>  {
+const Spinner = () =>  {
     return (
         <div className="spinner"></div>
     );
 }
+
+export default Spinner;

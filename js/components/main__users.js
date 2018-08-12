@@ -5,12 +5,12 @@ import fire from '../fire';
 import users from '../../expatpal-cd11e-export.json';
 
 // -------> COMPONENTS
-import { MainUser } from './main__user.jsx';
-import { MainSearchForm } from './main__searchform.jsx';
+import MainUser from './main__user';
+import MainSearchForm from './main__searchform';
 
 
 
-export const MainUsers = () => {
+const MainUsers = () => {
     return (
             <section className="main__users">
                 <div className="container main__users--container">
@@ -30,3 +30,5 @@ export const MainUsers = () => {
     );
 
 }
+
+export default MainUsers;

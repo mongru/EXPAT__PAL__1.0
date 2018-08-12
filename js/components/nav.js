@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom';
 
 // -------> COMPONENTS
-import { NavMobile } from './nav__mobile.jsx';
+import NavMobile from './nav__mobile.js';
 
-
-export class Nav extends React.Component {
+class Nav extends React.Component {
     constructor (props) {
         super (props);
         this.state = {
@@ -28,14 +28,14 @@ export class Nav extends React.Component {
                         </a>
                     </li>
                     <li className="nav__links--link">
-                        <a className="nav__links--link" href="#main__description">
-                            Log in
-                        </a>
+                        {/* <a className="nav__links--link" href="#main__description"> */}
+                            <Link to={'/signin'}>Log in</Link>
+                        {/* </a> */}
                     </li>
                     <li className="nav__links--link">
-                        <a className="nav__links--link" href="#">
-                            Sign up
-                        </a>
+                        {/* <a className="nav__links--link" href="#"> */}
+                            <Link to={'/signup'}>Sign up</Link>
+                        {/* </a> */}
                     </li>
                 </ul>
             </nav>
@@ -68,3 +68,5 @@ export class Nav extends React.Component {
         );
     }
 }
+
+export default Nav;

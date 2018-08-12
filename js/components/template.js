@@ -2,15 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // -------> COMPONENTS
-import { Header } from './header.jsx';
-import { MainInfo } from './main__info.jsx';
-import { MainDescription } from './main__description.jsx';
-import { MainSearchForm } from './main__searchform.jsx';
-import { ContactForm } from './contact__form.jsx';
-import { Footer } from './footer.jsx';
+import Header from './header.js';
+import MainInfo from './main__info.js';
+import MainDescription from './main__description.js';
+import MainSearchForm from './main__searchform.js';
+import ContactForm from './contact__form.js';
+import Footer from './footer.js';
 
 
-export const Template = () => {
+const Template = () => {
     return (
         <div className="container__wrapper">
             <Header />
@@ -23,5 +23,7 @@ export const Template = () => {
             <Footer />
         </div>
 
-    )
+    );
 }
+
+export default Template;
