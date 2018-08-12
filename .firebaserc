@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "expatpal-cd11e"
+    "default": "expatpal-cd11e",
+    "dist": "expatpal-cd11e"
   }
 }
